@@ -52,7 +52,7 @@ export default function FilterBar({
   return (
     <div
       ref={ref}
-      className={`sticky top-[33px] md:top-[41px] z-40 bg-white transition-all duration-150 ${
+      className={`sticky top-8 z-40 bg-white transition-all duration-150 ${
         isSticky ? 'border-b border-black' : ''
       }`}
     >

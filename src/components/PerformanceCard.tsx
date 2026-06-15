@@ -45,7 +45,7 @@ export default function PerformanceCard({ performance }: PerformanceCardProps) {
           rel="noopener noreferrer"
           className="text-[10px] lg:text-xs underline text-gray-700 hover:text-black transition-colors duration-150"
         >
-          Book tickets →
+          View Details →
         </a>
       </div>
     </div>

@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white text-black">
       <Header />
-      <main className="pt-0">
+      <main className="pt-8">
         <Hero />
         <FilterBar
           selectedGenre={selectedGenre}
