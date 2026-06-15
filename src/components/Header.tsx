@@ -1,5 +1,7 @@
+import { LAST_UPDATED } from '@/constants';
+
 export default function Header() {
-  const lastUpdated = new Date().toLocaleDateString('en-GB', {
+  const formatted = new Date(LAST_UPDATED).toLocaleDateString('en-GB', {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
@@ -14,7 +16,7 @@ export default function Header() {
         >
           London in Dance
         </h1>
-        <p className="text-xs text-gray-600">Last updated {lastUpdated}</p>
+        <p className="text-xs text-gray-600">Last updated {formatted}</p>
       </div>
     </header>
   );

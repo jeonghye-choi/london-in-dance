@@ -1,10 +1,7 @@
+import { INSTAGRAM_URL } from '@/constants';
 import { performances } from '@/data/performances';
 
-interface HeroProps {
-  onSuggestClick: () => void;
-}
-
-export default function Hero({ onSuggestClick }: HeroProps) {
+export default function Hero() {
   return (
     <section className="pt-24 md:pt-32 pb-8 md:pb-12 border-b border-black">
       <div className="container">
@@ -31,12 +28,14 @@ export default function Hero({ onSuggestClick }: HeroProps) {
             <p className="text-xs md:text-sm text-gray-600">
               <span className="font-semibold">{performances.length}</span>{' '}
               performances listed ·{' '}
-              <button
-                onClick={onSuggestClick}
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="ml-2 underline hover:opacity-70 transition-opacity duration-150"
               >
                 Suggest a show →
-              </button>
+              </a>
             </p>
           </div>
         </div>

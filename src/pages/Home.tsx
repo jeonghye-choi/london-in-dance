@@ -1,81 +1,46 @@
 import { useState } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import FilterBar, { DateFilter } from '@/components/FilterBar';
+import FilterBar from '@/components/FilterBar';
 import PerformanceCard from '@/components/PerformanceCard';
 import PerformanceModal from '@/components/PerformanceModal';
 import Footer from '@/components/Footer';
-import { performances, Performance, Genre } from '@/data/performances';
+import { useFilteredPerformances } from '@/hooks/useFilteredPerformances';
+import { Performance } from '@/types/performance';
 
 export default function Home() {
-  const [selectedGenre, setSelectedGenre] = useState<Genre | 'All'>('All');
-  const [selectedDate, setSelectedDate] = useState<DateFilter>('all');
-  const [selectedEvent, setSelectedEvent] = useState<Performance | null>(null);
+  const {
+    filteredPerformances,
+    selectedGenre,
+    selectedDate,
+    setSelectedGenre,
+    setSelectedDate,
+  } = useFilteredPerformances();
+  const [selectedPerformance, setSelectedPerformance] =
+    useState<Performance | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleSuggestShow = () => {
-    window.open('https://instagram.com/direct/t/jeonghye.choi', '_blank');
-  };
-
-  const getFilteredEvents = (): Performance[] => {
-    let filtered = performances;
-
-    if (selectedGenre !== 'All') {
-      filtered = filtered.filter(event => event.genre === selectedGenre);
-    }
-
-    if (selectedDate !== 'all') {
-      const today = new Date();
-      today.setHours(0, 0, 0, 0);
-
-      let endDate = new Date(today);
-
-      if (selectedDate === 'thisWeek') {
-        const daysUntilSunday = 6 - today.getDay();
-        endDate.setDate(today.getDate() + daysUntilSunday);
-      } else if (selectedDate === 'thisMonth') {
-        endDate = new Date(today.getFullYear(), today.getMonth() + 1, 0);
-      }
-
-      filtered = filtered.filter(event => {
-        const eventStart = new Date(event.startDate);
-        eventStart.setHours(0, 0, 0, 0);
-        return eventStart <= endDate;
-      });
-    }
-
-    return filtered.sort(
-      (a, b) =>
-        new Date(a.startDate).getTime() - new Date(b.startDate).getTime()
-    );
-  };
-
-  const filteredEvents = getFilteredEvents();
 
   return (
     <div className="min-h-screen bg-white text-black">
       <Header />
-
       <main className="pt-0">
-        <Hero onSuggestClick={handleSuggestShow} />
-
+        <Hero />
         <FilterBar
           selectedGenre={selectedGenre}
           selectedDate={selectedDate}
           onGenreChange={setSelectedGenre}
           onDateChange={setSelectedDate}
         />
-
         <section className="py-12 md:py-16 border-b border-black">
           <div className="container">
-            {filteredEvents.length > 0 ? (
+            {filteredPerformances.length > 0 ? (
               <div className="grid grid-cols-3 border-r border-b border-black">
-                {filteredEvents.map(event => (
+                {filteredPerformances.map(performance => (
                   <PerformanceCard
-                    key={event.ticketUrl ?? event.title}
-                    event={event}
+                    key={performance.ticketUrl ?? performance.title}
+                    performance={performance}
                     onClick={() => {
-                      setSelectedEvent(event);
+                      setSelectedPerformance(performance);
                       setIsModalOpen(true);
                     }}
                   />
@@ -90,12 +55,10 @@ export default function Home() {
             )}
           </div>
         </section>
-
-        <Footer onSuggestClick={handleSuggestShow} />
+        <Footer />
       </main>
-
       <PerformanceModal
-        event={selectedEvent}
+        performance={selectedPerformance}
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />

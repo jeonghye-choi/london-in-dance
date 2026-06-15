@@ -1,6 +1,18 @@
-import { Genre } from '@/data/performances';
+import { Genre } from '@/types/performance';
 
 export type DateFilter = 'all' | 'thisWeek' | 'thisMonth';
+
+const GENRE_LABELS: Record<Genre | 'All', string> = {
+  All: 'All',
+  Ballet: 'Ballet',
+  Contemporary: 'Contemporary',
+};
+
+const DATE_LABELS: Record<DateFilter, string> = {
+  all: 'All',
+  thisWeek: 'This Week',
+  thisMonth: 'This Month',
+};
 
 interface FilterBarProps {
   selectedGenre: Genre | 'All';
@@ -18,23 +30,10 @@ export default function FilterBar({
   const genreOptions: (Genre | 'All')[] = ['All', 'Ballet', 'Contemporary'];
   const dateOptions: DateFilter[] = ['all', 'thisWeek', 'thisMonth'];
 
-  const getGenreLabel = (genre: Genre | 'All'): string => {
-    if (genre === 'All') return 'All';
-    if (genre === 'Ballet') return 'Ballet';
-    return 'Contemporary';
-  };
-
-  const getDateLabel = (date: DateFilter): string => {
-    if (date === 'all') return 'All';
-    if (date === 'thisWeek') return 'This Week';
-    return 'This Month';
-  };
-
   return (
     <div className="sticky top-[41px] md:top-[53px] z-40 bg-white border-b border-black">
       <div className="container py-4 md:py-5">
         <div className="flex items-center gap-4 md:gap-8">
-          {/* Genre Filter */}
           <div className="flex items-center gap-2 md:gap-4">
             <p className="text-[10px] md:text-sm font-bold uppercase tracking-wide text-gray-900 whitespace-nowrap">
               Genre
@@ -50,13 +49,12 @@ export default function FilterBar({
                       : 'border-black text-black hover:bg-gray-50'
                   }`}
                 >
-                  {getGenreLabel(genre)}
+                  {GENRE_LABELS[genre]}
                 </button>
               ))}
             </div>
           </div>
 
-          {/* Date Filter */}
           <div className="flex items-center gap-2 md:gap-4">
             <p className="text-[10px] md:text-sm font-bold uppercase tracking-wide text-gray-900 whitespace-nowrap">
               Date
@@ -72,7 +70,7 @@ export default function FilterBar({
                       : 'border-black text-black hover:bg-gray-50'
                   }`}
                 >
-                  {getDateLabel(date)}
+                  {DATE_LABELS[date]}
                 </button>
               ))}
             </div>

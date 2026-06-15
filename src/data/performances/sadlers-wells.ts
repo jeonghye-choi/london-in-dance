@@ -1,21 +1,6 @@
-export type Genre = 'Ballet' | 'Contemporary';
+import { Performance } from '@/types/performance';
 
-export interface Performance {
-  title: string;
-  venue: string;
-  genre: Genre;
-  startDate: string; // 'YYYY-MM-DD'
-  endDate?: string;
-  description?: string;
-  imageUrl?: string;
-  ticketUrl?: string;
-  time?: string;
-  isFree?: boolean;
-}
-
-export const performances: Performance[] = [
-  // ─── Sadler's Wells ───────────────────────────────────────────────────────
-
+export const sadlersWellsPerformances: Performance[] = [
   {
     title: 'Compañía de Danza Jesús Carmona – UnYdos',
     venue: "Sadler's Wells Theatre",
@@ -124,30 +109,5 @@ export const performances: Performance[] = [
       'https://images.sadlerswells.com/uploads/2025/10/LEAD-IMAGE_LCB-Anne-of-Green-Gables_ASH_2700x1080-scaled.jpg',
     ticketUrl:
       'https://www.sadlerswells.com/whats-on/london-childrens-ballet-anne-of-green-gables-2026/#book',
-  },
-
-  // ─── Royal Ballet & Opera ─────────────────────────────────────────────────
-
-  {
-    title: 'La Fille mal gardée',
-    venue: 'Royal Opera House',
-    genre: 'Ballet',
-    startDate: '2026-05-23',
-    endDate: '2026-06-09',
-    imageUrl:
-      'https://images.prismic.io/royal-opera-house/aCN7dSdWJ-7kSCSQ_FilleROH26061_f7_2.jpg',
-    ticketUrl:
-      'https://www.rbo.org.uk/tickets-and-events/la-fille-mal-gardee-dates',
-  },
-  {
-    title: 'So Are We: León and Lightfoot',
-    venue: 'Royal Opera House',
-    genre: 'Contemporary',
-    startDate: '2026-06-11',
-    endDate: '2026-06-20',
-    imageUrl:
-      'https://images.prismic.io/royal-opera-house/aUmJOHNYClf9olcw_LM-5_FINALCROP.jpg',
-    ticketUrl:
-      'https://www.rbo.org.uk/tickets-and-events/so-are-we-leon-and-lightfoot-dates',
   },
 ];

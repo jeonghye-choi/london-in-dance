@@ -1,30 +1,29 @@
-import { Performance } from '@/data/performances';
+import { DEFAULT_IMAGE } from '@/constants';
 import { formatDateRange } from '@/lib/formatDate';
+import { Performance } from '@/types/performance';
 import { X } from 'lucide-react';
 
 interface PerformanceModalProps {
-  event: Performance | null;
+  performance: Performance | null;
   isOpen: boolean;
   onClose: () => void;
 }
 
 export default function PerformanceModal({
-  event,
+  performance,
   isOpen,
   onClose,
 }: PerformanceModalProps) {
-  if (!isOpen || !event) return null;
+  if (!isOpen || !performance) return null;
 
   return (
     <>
-      {/* Backdrop */}
       <div
-        className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
+        className="fixed inset-0 z-50 bg-black/50"
         onClick={onClose}
         style={{ animation: 'fadeIn 0.25s ease-out' }}
       />
 
-      {/* Modal */}
       <div
         className="fixed inset-0 z-50 flex items-center justify-center p-4"
         onClick={onClose}
@@ -35,7 +34,6 @@ export default function PerformanceModal({
           onClick={e => e.stopPropagation()}
           style={{ animation: 'scaleIn 0.25s ease-out' }}
         >
-          {/* Close Button */}
           <div className="sticky top-0 flex justify-end p-4 border-b border-black bg-white">
             <button
               onClick={onClose}
@@ -46,78 +44,80 @@ export default function PerformanceModal({
             </button>
           </div>
 
-          {/* Content */}
           <div className="p-6 md:p-8 space-y-6">
-            {/* Image */}
             <div className="aspect-video bg-gray-100 overflow-hidden">
               <img
-                src={event.imageUrl}
-                alt={event.title}
+                src={performance.imageUrl ?? DEFAULT_IMAGE}
+                alt={performance.title}
                 className="w-full h-full object-cover"
                 onError={e => {
-                  e.currentTarget.src =
-                    'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450"%3E%3Crect fill="%23f0f0f0" width="800" height="450"/%3E%3Ctext x="50%25" y="50%25" font-size="32" fill="%23999" text-anchor="middle" dominant-baseline="middle"%3ENo Image%3C/text%3E%3C/svg%3E';
+                  e.currentTarget.src = DEFAULT_IMAGE;
                 }}
               />
             </div>
 
-            {/* Title */}
             <div>
               <h2
                 className="text-3xl md:text-4xl font-semibold leading-snug mb-2"
                 style={{ fontFamily: 'var(--font-family-display)' }}
               >
-                {event.title}
+                {performance.title}
               </h2>
               <span className="text-xs md:text-sm uppercase tracking-wide text-gray-700 font-medium">
-                {event.genre}
+                {performance.genre}
               </span>
             </div>
 
-            {/* Details Grid */}
             <div className="grid grid-cols-2 gap-6 border-t border-b border-black py-6">
               <div>
                 <p className="text-xs md:text-sm uppercase tracking-wide text-gray-700 font-medium mb-1">
                   Venue
                 </p>
-                <p className="text-base">{event.venue}</p>
+                <p className="text-base">{performance.venue}</p>
               </div>
               <div>
                 <p className="text-xs md:text-sm uppercase tracking-wide text-gray-700 font-medium mb-1">
-                  Date Range
+                  Date
                 </p>
                 <p className="text-base">
                   {formatDateRange(
-                    event.startDate,
-                    event.endDate ?? event.startDate
+                    performance.startDate,
+                    performance.endDate ?? performance.startDate
                   )}
                 </p>
               </div>
-              <div>
-                <p className="text-xs md:text-sm uppercase tracking-wide text-gray-700 font-medium mb-1">
-                  Time
-                </p>
-                <p className="text-base">{event.time}</p>
-              </div>
-              <div>
-                <p className="text-xs md:text-sm uppercase tracking-wide text-gray-700 font-medium mb-1">
-                  Price
-                </p>
-                <p className="text-base">{event.isFree ? 'Free' : 'Paid'}</p>
-              </div>
+              {performance.time && (
+                <div>
+                  <p className="text-xs md:text-sm uppercase tracking-wide text-gray-700 font-medium mb-1">
+                    Time
+                  </p>
+                  <p className="text-base">{performance.time}</p>
+                </div>
+              )}
+              {performance.isFree !== undefined && (
+                <div>
+                  <p className="text-xs md:text-sm uppercase tracking-wide text-gray-700 font-medium mb-1">
+                    Price
+                  </p>
+                  <p className="text-base">
+                    {performance.isFree ? 'Free' : 'Paid'}
+                  </p>
+                </div>
+              )}
             </div>
 
-            {/* Description */}
-            <div>
-              <p className="text-xs md:text-sm uppercase tracking-wide text-gray-700 font-medium mb-3">
-                Description
-              </p>
-              <p className="text-lg leading-relaxed">{event.description}</p>
-            </div>
-
-            {/* Book Tickets Button */}
+            {performance.description && (
+              <div>
+                <p className="text-xs md:text-sm uppercase tracking-wide text-gray-700 font-medium mb-3">
+                  Description
+                </p>
+                <p className="text-lg leading-relaxed">
+                  {performance.description}
+                </p>
+              </div>
+            )}
             <a
-              href={event.ticketUrl}
+              href={performance.ticketUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="block text-center font-medium text-sm uppercase tracking-wide px-6 py-3 border border-black bg-white text-black hover:bg-black hover:text-white transition-all duration-200 active:scale-95"
