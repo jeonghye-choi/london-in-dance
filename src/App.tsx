@@ -1,4 +1,5 @@
 import { Route, Switch } from 'wouter';
+import { Analytics } from '@vercel/analytics/react';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import ErrorBoundary from './components/ErrorBoundary';
@@ -16,6 +17,7 @@ export default function App() {
   return (
     <ErrorBoundary>
       <Router />
+      <Analytics />
     </ErrorBoundary>
   );
 }
