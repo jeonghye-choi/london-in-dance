@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import FilterBar, { DateFilter } from '@/components/FilterBar';
@@ -9,35 +8,22 @@ import Footer from '@/components/Footer';
 import { performances, Performance, Genre } from '@/data/performances';
 
 export default function Home() {
-  const { i18n } = useTranslation();
-  const [currentLanguage, setCurrentLanguage] = useState<'en' | 'ko'>((i18n.language as 'en' | 'ko') || 'en');
   const [selectedGenre, setSelectedGenre] = useState<Genre | 'All'>('All');
   const [selectedDate, setSelectedDate] = useState<DateFilter>('all');
   const [selectedEvent, setSelectedEvent] = useState<Performance | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Handle language change
-  const handleLanguageChange = (lang: 'en' | 'ko') => {
-    setCurrentLanguage(lang);
-    i18n.changeLanguage(lang);
-  };
-
-  // Handle suggest show click
   const handleSuggestShow = () => {
-    // Open Instagram DM link
     window.open('https://instagram.com/direct/t/jeonghye.choi', '_blank');
   };
 
-  // Filter events
   const getFilteredEvents = (): Performance[] => {
     let filtered = performances;
 
-    // Genre filter
     if (selectedGenre !== 'All') {
-      filtered = filtered.filter((event) => event.genre === selectedGenre);
+      filtered = filtered.filter(event => event.genre === selectedGenre);
     }
 
-    // Date filter
     if (selectedDate !== 'all') {
       const today = new Date();
       today.setHours(0, 0, 0, 0);
@@ -45,38 +31,34 @@ export default function Home() {
       let endDate = new Date(today);
 
       if (selectedDate === 'thisWeek') {
-        // Calculate end of this week (Sunday)
         const daysUntilSunday = 6 - today.getDay();
         endDate.setDate(today.getDate() + daysUntilSunday);
       } else if (selectedDate === 'thisMonth') {
-        // Calculate end of this month
         endDate = new Date(today.getFullYear(), today.getMonth() + 1, 0);
       }
 
-      filtered = filtered.filter((event) => {
+      filtered = filtered.filter(event => {
         const eventStart = new Date(event.startDate);
         eventStart.setHours(0, 0, 0, 0);
         return eventStart <= endDate;
       });
     }
 
-    // Sort by start date ascending
-    return filtered.sort((a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime());
+    return filtered.sort(
+      (a, b) =>
+        new Date(a.startDate).getTime() - new Date(b.startDate).getTime()
+    );
   };
 
   const filteredEvents = getFilteredEvents();
 
   return (
     <div className="min-h-screen bg-white text-black">
-      {/* Header */}
-      <Header onLanguageChange={handleLanguageChange} currentLanguage={currentLanguage} />
+      <Header />
 
-      {/* Main Content */}
       <main className="pt-0">
-        {/* Hero Section */}
         <Hero onSuggestClick={handleSuggestShow} />
 
-        {/* Filter Bar */}
         <FilterBar
           selectedGenre={selectedGenre}
           selectedDate={selectedDate}
@@ -84,12 +66,11 @@ export default function Home() {
           onDateChange={setSelectedDate}
         />
 
-        {/* Performance Grid */}
         <section className="py-12 md:py-16 border-b border-black">
           <div className="container">
             {filteredEvents.length > 0 ? (
               <div className="grid grid-cols-3 border-r border-b border-black">
-                {filteredEvents.map((event) => (
+                {filteredEvents.map(event => (
                   <PerformanceCard
                     key={event.ticketUrl ?? event.title}
                     event={event}
@@ -102,18 +83,22 @@ export default function Home() {
               </div>
             ) : (
               <div className="text-center py-12">
-                <p className="text-lg text-gray-600">No performances found for the selected filters.</p>
+                <p className="text-lg text-gray-600">
+                  No performances found for the selected filters.
+                </p>
               </div>
             )}
           </div>
         </section>
 
-        {/* Footer */}
         <Footer onSuggestClick={handleSuggestShow} />
       </main>
 
-      {/* Modal */}
-      <PerformanceModal event={selectedEvent} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <PerformanceModal
+        event={selectedEvent}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 }

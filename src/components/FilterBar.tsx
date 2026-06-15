@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import { Genre } from '@/data/performances';
 
 export type DateFilter = 'all' | 'thisWeek' | 'thisMonth';
@@ -16,33 +15,32 @@ export default function FilterBar({
   onGenreChange,
   onDateChange,
 }: FilterBarProps) {
-  const { t } = useTranslation();
-
   const genreOptions: (Genre | 'All')[] = ['All', 'Ballet', 'Contemporary'];
   const dateOptions: DateFilter[] = ['all', 'thisWeek', 'thisMonth'];
 
   const getGenreLabel = (genre: Genre | 'All'): string => {
-    if (genre === 'All') return t('filter.all');
-    if (genre === 'Ballet') return t('filter.ballet');
-    return t('filter.contemporary');
+    if (genre === 'All') return 'All';
+    if (genre === 'Ballet') return 'Ballet';
+    return 'Contemporary';
   };
 
   const getDateLabel = (date: DateFilter): string => {
-    if (date === 'all') return t('filter.all');
-    if (date === 'thisWeek') return t('filter.thisWeek');
-    return t('filter.thisMonth');
+    if (date === 'all') return 'All';
+    if (date === 'thisWeek') return 'This Week';
+    return 'This Month';
   };
 
   return (
     <div className="sticky top-[41px] md:top-[53px] z-40 bg-white border-b border-black">
       <div className="container py-4 md:py-5">
-        {/* All filters in one line */}
         <div className="flex items-center gap-4 md:gap-8">
           {/* Genre Filter */}
           <div className="flex items-center gap-2 md:gap-4">
-            <p className="text-[10px] md:text-sm font-bold uppercase tracking-wide text-gray-900 whitespace-nowrap">{t('filter.genre')}</p>
+            <p className="text-[10px] md:text-sm font-bold uppercase tracking-wide text-gray-900 whitespace-nowrap">
+              Genre
+            </p>
             <div className="flex gap-1 md:gap-2">
-              {genreOptions.map((genre) => (
+              {genreOptions.map(genre => (
                 <button
                   key={genre}
                   onClick={() => onGenreChange(genre)}
@@ -60,9 +58,11 @@ export default function FilterBar({
 
           {/* Date Filter */}
           <div className="flex items-center gap-2 md:gap-4">
-            <p className="text-[10px] md:text-sm font-bold uppercase tracking-wide text-gray-900 whitespace-nowrap">{t('filter.date')}</p>
+            <p className="text-[10px] md:text-sm font-bold uppercase tracking-wide text-gray-900 whitespace-nowrap">
+              Date
+            </p>
             <div className="flex gap-1 md:gap-2">
-              {dateOptions.map((date) => (
+              {dateOptions.map(date => (
                 <button
                   key={date}
                   onClick={() => onDateChange(date)}

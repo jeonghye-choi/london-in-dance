@@ -22,8 +22,10 @@ export const performances: Performance[] = [
     genre: 'Contemporary',
     startDate: '2026-06-16',
     endDate: '2026-06-17',
-    imageUrl: 'https://images.sadlerswells.com/uploads/2026/01/jesus_carmona.jpg',
-    ticketUrl: 'https://www.sadlerswells.com/whats-on/jesus-carmona-unydos/#book',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/01/jesus_carmona.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/jesus-carmona-unydos/#book',
   },
   {
     title: 'Head First Acrobats – Return of The GODZ',
@@ -31,8 +33,10 @@ export const performances: Performance[] = [
     genre: 'Contemporary',
     startDate: '2026-06-17',
     endDate: '2026-06-20',
-    imageUrl: 'https://images.sadlerswells.com/uploads/2025/09/LEAD-IMAGE_Return-of-the-Godz_Jacinta-Oaten_2700x1080-resized-scaled.jpg',
-    ticketUrl: 'https://www.sadlerswells.com/whats-on/head-first-acrobats-return-of-godz/#book',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2025/09/LEAD-IMAGE_Return-of-the-Godz_Jacinta-Oaten_2700x1080-resized-scaled.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/head-first-acrobats-return-of-godz/#book',
   },
   {
     title: 'Acosta Danza Yunior – Next Generation',
@@ -40,8 +44,10 @@ export const performances: Performance[] = [
     genre: 'Contemporary',
     startDate: '2026-06-17',
     endDate: '2026-06-20',
-    imageUrl: 'https://images.sadlerswells.com/uploads/2025/09/LEAD-IMAGE_Acosta-Danza-Yunior-Company_Yuris-Norido_2700x1080-scaled-1-scaled.jpg',
-    ticketUrl: 'https://www.sadlerswells.com/whats-on/acosta-danza-yunior-next-generation/#book',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2025/09/LEAD-IMAGE_Acosta-Danza-Yunior-Company_Yuris-Norido_2700x1080-scaled-1-scaled.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/acosta-danza-yunior-next-generation/#book',
   },
   {
     title: 'Rafaela Carrasco – Creaviva',
@@ -49,8 +55,10 @@ export const performances: Performance[] = [
     genre: 'Contemporary',
     startDate: '2026-06-18',
     endDate: '2026-06-18',
-    imageUrl: 'https://images.sadlerswells.com/uploads/2026/01/rafaela_carrasco_ff.jpg',
-    ticketUrl: 'https://www.sadlerswells.com/whats-on/rafaela-carrasco-creaviva/#book',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/01/rafaela_carrasco_ff.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/rafaela-carrasco-creaviva/#book',
   },
   {
     title: 'Gala Flamenca 2026',
@@ -58,7 +66,8 @@ export const performances: Performance[] = [
     genre: 'Contemporary',
     startDate: '2026-06-19',
     endDate: '2026-06-20',
-    imageUrl: 'https://images.sadlerswells.com/uploads/2026/01/gala_flamenca_ff.jpg',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/01/gala_flamenca_ff.jpg',
     ticketUrl: 'https://www.sadlerswells.com/whats-on/gala-flamenca-2026/#book',
   },
   {
@@ -67,8 +76,10 @@ export const performances: Performance[] = [
     genre: 'Contemporary',
     startDate: '2026-06-20',
     endDate: '2026-06-20',
-    imageUrl: 'https://images.sadlerswells.com/uploads/2026/02/Esther-Merino_ff.jpg',
-    ticketUrl: 'https://www.sadlerswells.com/whats-on/esther-merino-en-tierra-de-hombres/#book',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/02/Esther-Merino_ff.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/esther-merino-en-tierra-de-hombres/#book',
   },
   {
     title: 'Phoenix Dance Theatre – Interplay',
@@ -76,8 +87,10 @@ export const performances: Performance[] = [
     genre: 'Contemporary',
     startDate: '2026-06-24',
     endDate: '2026-06-27',
-    imageUrl: 'https://images.sadlerswells.com/uploads/2026/01/Phoenix-2026-website-square-credit-Drew-Forsyth.jpg',
-    ticketUrl: 'https://www.sadlerswells.com/whats-on/phoenix-dance-theatre-interplay/#book',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/01/Phoenix-2026-website-square-credit-Drew-Forsyth.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/phoenix-dance-theatre-interplay/#book',
   },
   {
     title: 'Rocío Molina – CALENTAMIENTO',
@@ -85,8 +98,10 @@ export const performances: Performance[] = [
     genre: 'Contemporary',
     startDate: '2026-06-24',
     endDate: '2026-06-24',
-    imageUrl: 'https://images.sadlerswells.com/uploads/2026/01/rocio_molina_ff.jpg',
-    ticketUrl: 'https://www.sadlerswells.com/whats-on/rocio-molina-calentamiento/#book',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/01/rocio_molina_ff.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/rocio-molina-calentamiento/#book',
   },
   {
     title: 'Ballet Flamenco de Andalucia – Tierra Bendita',
@@ -94,8 +109,10 @@ export const performances: Performance[] = [
     genre: 'Contemporary',
     startDate: '2026-06-26',
     endDate: '2026-06-27',
-    imageUrl: 'https://images.sadlerswells.com/uploads/2026/01/ballet_andalucia.jpg',
-    ticketUrl: 'https://www.sadlerswells.com/whats-on/ballet-flamenco-de-andalucia-tierra-bendita/#book',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/01/ballet_andalucia.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/ballet-flamenco-de-andalucia-tierra-bendita/#book',
   },
   {
     title: "London Children's Ballet – Anne of Green Gables",
@@ -103,8 +120,10 @@ export const performances: Performance[] = [
     genre: 'Ballet',
     startDate: '2026-07-03',
     endDate: '2026-07-05',
-    imageUrl: 'https://images.sadlerswells.com/uploads/2025/10/LEAD-IMAGE_LCB-Anne-of-Green-Gables_ASH_2700x1080-scaled.jpg',
-    ticketUrl: 'https://www.sadlerswells.com/whats-on/london-childrens-ballet-anne-of-green-gables-2026/#book',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2025/10/LEAD-IMAGE_LCB-Anne-of-Green-Gables_ASH_2700x1080-scaled.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/london-childrens-ballet-anne-of-green-gables-2026/#book',
   },
 
   // ─── Royal Ballet & Opera ─────────────────────────────────────────────────
@@ -115,8 +134,10 @@ export const performances: Performance[] = [
     genre: 'Ballet',
     startDate: '2026-05-23',
     endDate: '2026-06-09',
-    imageUrl: 'https://images.prismic.io/royal-opera-house/aCN7dSdWJ-7kSCSQ_FilleROH26061_f7_2.jpg',
-    ticketUrl: 'https://www.rbo.org.uk/tickets-and-events/la-fille-mal-gardee-dates',
+    imageUrl:
+      'https://images.prismic.io/royal-opera-house/aCN7dSdWJ-7kSCSQ_FilleROH26061_f7_2.jpg',
+    ticketUrl:
+      'https://www.rbo.org.uk/tickets-and-events/la-fille-mal-gardee-dates',
   },
   {
     title: 'So Are We: León and Lightfoot',
@@ -124,7 +145,9 @@ export const performances: Performance[] = [
     genre: 'Contemporary',
     startDate: '2026-06-11',
     endDate: '2026-06-20',
-    imageUrl: 'https://images.prismic.io/royal-opera-house/aUmJOHNYClf9olcw_LM-5_FINALCROP.jpg',
-    ticketUrl: 'https://www.rbo.org.uk/tickets-and-events/so-are-we-leon-and-lightfoot-dates',
+    imageUrl:
+      'https://images.prismic.io/royal-opera-house/aUmJOHNYClf9olcw_LM-5_FINALCROP.jpg',
+    ticketUrl:
+      'https://www.rbo.org.uk/tickets-and-events/so-are-we-leon-and-lightfoot-dates',
   },
 ];
