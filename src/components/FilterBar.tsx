@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Genre } from '@/types/performance';
 
-export type DateFilter = 'all' | 'thisWeek' | 'thisMonth';
+export type DateFilter = 'all' | 'now' | 'thisWeek' | 'thisMonth';
 
 const GENRE_LABELS: Record<Genre | 'All', string> = {
   All: 'All',
@@ -11,6 +11,7 @@ const GENRE_LABELS: Record<Genre | 'All', string> = {
 
 const DATE_LABELS: Record<DateFilter, string> = {
   all: 'All',
+  now: 'Now On',
   thisWeek: 'This Week',
   thisMonth: 'This Month',
 };
@@ -29,7 +30,7 @@ export default function FilterBar({
   onDateChange,
 }: FilterBarProps) {
   const genreOptions: (Genre | 'All')[] = ['All', 'Ballet', 'Contemporary'];
-  const dateOptions: DateFilter[] = ['all', 'thisWeek', 'thisMonth'];
+  const dateOptions: DateFilter[] = ['all', 'now', 'thisWeek', 'thisMonth'];
   const [isSticky, setIsSticky] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 

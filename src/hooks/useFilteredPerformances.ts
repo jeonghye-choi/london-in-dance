@@ -22,6 +22,16 @@ export function useFilteredPerformances() {
       filtered = filtered.filter(p => p.genre === selectedGenre);
     }
 
+    if (selectedDate === 'now') {
+      filtered = filtered.filter(p => {
+        const start = new Date(p.startDate);
+        const end = new Date(p.endDate ?? p.startDate);
+        start.setHours(0, 0, 0, 0);
+        end.setHours(0, 0, 0, 0);
+        return start <= today && end >= today;
+      });
+    }
+
     if (selectedDate !== 'all') {
       let endDate = new Date(today);
 
