@@ -57,17 +57,17 @@ export default function FilterBar({
       }`}
     >
       <div className="container py-3 lg:py-4">
-        <div className="flex items-center gap-4 lg:gap-8">
-          <div className="flex items-center gap-2 lg:gap-3">
-            <p className="text-[10px] lg:text-xs font-bold uppercase tracking-wide text-gray-900 whitespace-nowrap">
+        <div className="flex flex-col gap-2">
+          <div className="flex items-center gap-2">
+            <p className="text-[10px] font-bold uppercase tracking-wide text-gray-900 whitespace-nowrap w-12">
               Genre
             </p>
-            <div className="flex gap-1 lg:gap-2">
+            <div className="flex flex-wrap gap-1">
               {genreOptions.map(genre => (
                 <button
                   key={genre}
                   onClick={() => onGenreChange(genre)}
-                  className={`text-[10px] lg:text-xs font-medium px-2 py-1 lg:px-3 lg:py-1.5 border rounded-full transition-all duration-150 whitespace-nowrap ${
+                  className={`text-[10px] font-medium px-2 py-1 border rounded-full transition-all duration-150 whitespace-nowrap ${
                     selectedGenre === genre
                       ? 'border-black bg-black text-white'
                       : 'border-black text-black hover:bg-gray-50'
@@ -79,16 +79,16 @@ export default function FilterBar({
             </div>
           </div>
 
-          <div className="flex items-center gap-2 lg:gap-3">
-            <p className="text-[10px] lg:text-xs font-bold uppercase tracking-wide text-gray-900 whitespace-nowrap">
+          <div className="flex items-center gap-2">
+            <p className="text-[10px] font-bold uppercase tracking-wide text-gray-900 whitespace-nowrap w-12">
               Date
             </p>
-            <div className="flex gap-1 lg:gap-2">
+            <div className="flex flex-wrap gap-1">
               {dateOptions.map(date => (
                 <button
                   key={date}
                   onClick={() => onDateChange(date)}
-                  className={`text-[10px] lg:text-xs font-medium px-2 py-1 lg:px-3 lg:py-1.5 border rounded-full transition-all duration-150 whitespace-nowrap ${
+                  className={`text-[10px] font-medium px-2 py-1 border rounded-full transition-all duration-150 whitespace-nowrap ${
                     selectedDate === date
                       ? 'border-black bg-black text-white'
                       : 'border-black text-black hover:bg-gray-50'
