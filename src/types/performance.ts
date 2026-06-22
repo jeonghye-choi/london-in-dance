@@ -1,4 +1,4 @@
-export type Genre = 'Ballet' | 'Contemporary';
+export type Genre = 'Ballet' | 'Contemporary' | 'Jazz' | 'National Dance';
 
 export interface Performance {
   title: string;
