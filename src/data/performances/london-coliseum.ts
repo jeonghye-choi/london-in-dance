@@ -12,6 +12,17 @@ export const londonColiseumPerformances: Performance[] = [
     ticketUrl: 'https://londoncoliseum.org/events/swan-lake/#calendar',
   },
   {
+    title: 'The Margot Fonteyn International Ballet Competition – Final',
+    venue: 'London Coliseum',
+    genre: 'Ballet',
+    startDate: '2026-11-08',
+    endDate: '2026-11-08',
+    imageUrl:
+      'https://londoncoliseum.org/wp-content/uploads/2026/05/Website_Fonteyn-finalists-banner-2000x1000-1-850x478.jpg',
+    ticketUrl:
+      'https://londoncoliseum.org/events/the-margot-fonteyn-international-ballet-competition-final/#calendar',
+  },
+  {
     title: 'Nutcracker – English National Ballet',
     venue: 'London Coliseum',
     genre: 'Ballet',
@@ -32,7 +43,7 @@ export const londonColiseumPerformances: Performance[] = [
     ticketUrl: 'https://londoncoliseum.org/events/romeo-juliet/#calendar',
   },
   {
-    title: 'Ballet Icons Gala 2027',
+    title: 'Ballet Icons Gala 2027 – Entering the Third Decade',
     venue: 'London Coliseum',
     genre: 'Ballet',
     startDate: '2027-02-21',
@@ -40,6 +51,6 @@ export const londonColiseumPerformances: Performance[] = [
     imageUrl:
       'https://londoncoliseum.org/wp-content/uploads/2026/06/BIG-2000-х1000-850x478.jpg',
     ticketUrl:
-      'https://londoncoliseum.org/events/ballet-icons-gala-2027/#calendar',
+      'https://londoncoliseum.org/events/ballet-icons-gala-2027-entering-the-third-decade/#calendar',
   },
 ];
