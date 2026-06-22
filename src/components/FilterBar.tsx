@@ -7,6 +7,8 @@ const GENRE_LABELS: Record<Genre | 'All', string> = {
   All: 'All',
   Ballet: 'Ballet',
   Contemporary: 'Contemporary',
+  Jazz: 'Jazz',
+  'National Dance': 'National Dance',
 };
 
 const DATE_LABELS: Record<DateFilter, string> = {
@@ -29,7 +31,13 @@ export default function FilterBar({
   onGenreChange,
   onDateChange,
 }: FilterBarProps) {
-  const genreOptions: (Genre | 'All')[] = ['All', 'Ballet', 'Contemporary'];
+  const genreOptions: (Genre | 'All')[] = [
+    'All',
+    'Ballet',
+    'Contemporary',
+    'Jazz',
+    'National Dance',
+  ];
   const dateOptions: DateFilter[] = ['all', 'now', 'thisWeek', 'thisMonth'];
   const [isSticky, setIsSticky] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
