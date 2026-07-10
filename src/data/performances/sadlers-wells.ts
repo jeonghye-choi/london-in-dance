@@ -133,6 +133,49 @@ export const sadlersWellsPerformances: Performance[] = [
       'https://www.sadlerswells.com/whats-on/compania-marco-flores-rayuela/#book',
   },
   {
+    title: 'London Vocational Ballet School - Forces of Nature',
+    venue: 'Lilian Baylis Studio',
+    genre: 'Ballet',
+    startDate: '2026-06-29',
+    endDate: '2026-06-29',
+    imageUrl: 'https://images.sadlerswells.com/uploads/2026/05/LVBS_guest.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/lvbs-forces-of-nature/#book',
+  },
+  {
+    title: "Vicki Igbokwe-Ozoagu's Our Mighty Groove",
+    venue: "Sadler's Wells East",
+    genre: 'Contemporary',
+    startDate: '2026-07-02',
+    endDate: '2026-07-04',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2024/08/LEAD-IMAGE-Our-Mighty-Groove-c.-Camilla-Greenwell-1-scaled.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/vigbokwe-igbokwe-ozoagu-mighty-groove-2026/#book',
+  },
+  {
+    title: 'Noda Map - 320°F',
+    venue: "Sadler's Wells Theatre",
+    genre: 'Contemporary',
+    startDate: '2026-07-02',
+    endDate: '2026-07-11',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/02/nodamap_guest.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/noda-map-minus-320-fahrenheit/#book',
+  },
+  {
+    title: 'Aakash Odedra Company - Songs of The Bulbul',
+    venue: "Sadler's Wells East",
+    genre: 'National Dance',
+    startDate: '2026-07-07',
+    endDate: '2026-07-11',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/02/LEAD_Aakash-Odedra-Songs-of-the-Bulbul--Angela-Grabowska.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/aakash-odedra-company-songs-of-the-bulbul/#book',
+  },
+  {
     title: "Matthew Bourne's New Adventures – The Car Man",
     venue: "Sadler's Wells Theatre",
     genre: 'Contemporary',
@@ -144,6 +187,17 @@ export const sadlersWellsPerformances: Performance[] = [
       'https://www.sadlerswells.com/whats-on/matthew-bournes-new-adventures-the-car-man/#book',
   },
   {
+    title: 'Dance Umbrella - THE HERD/LESS',
+    venue: "Sadler's Wells East",
+    genre: 'Contemporary',
+    startDate: '2026-10-08',
+    endDate: '2026-10-10',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/04/LEAD-IMAGE_Mamela-Nyamza-THE-HERD-LESS_Kim-Stevens_2700x1080-scaled.png',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/dance-umbrella-the-herd-less/#book',
+  },
+  {
     title: 'Katye Coe and Charlie Morrissey – Countermeasure',
     venue: 'Lilian Baylis Studio',
     genre: 'Contemporary',
@@ -153,6 +207,28 @@ export const sadlersWellsPerformances: Performance[] = [
       'https://images.sadlerswells.com/uploads/2026/04/LEAD-IMAGE_Katye-Coe-and-Charlie-Morrissey-Countermeasure_Camilla-Greenwell_2700x1080-scaled.jpg',
     ticketUrl:
       'https://www.sadlerswells.com/whats-on/katye-coe-and-charlie-morrissey-countermeasure/#book',
+  },
+  {
+    title: 'Ballet Black at 25 - Double Bill',
+    venue: "Sadler's Wells Theatre",
+    genre: 'Ballet',
+    startDate: '2026-10-14',
+    endDate: '2026-10-17',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/04/LEAD-IMAGE_Ballet-Black-at-25_ASH_2700x1080-scaled.png',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/ballet-black-at-25-double-bill/#book',
+  },
+  {
+    title: 'STORIES - The Tap Dance Sensation',
+    venue: 'Peacock Theatre',
+    genre: 'Jazz',
+    startDate: '2026-10-14',
+    endDate: '2026-10-31',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2025/08/LEAD-IMAGE_STORIES-The-Tap-Dance-Sensation_Elliot-Aubin_2700x1080-scaled.png',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/stories-the-tap-dance-sensation-2026/#book',
   },
   {
     title: 'Alleyne Dance – Far From Home',
@@ -281,6 +357,17 @@ export const sadlersWellsPerformances: Performance[] = [
       'https://images.sadlerswells.com/uploads/2026/04/LEAD-IMAGE_Georgai-Tegou-In-the-Quiet-of-Us_Camilla-Greenwell_2700x1080-scaled.png',
     ticketUrl:
       'https://www.sadlerswells.com/whats-on/georgia-tegou-in-the-quiet-of-us/#book',
+  },
+  {
+    title: 'Ebony Scrooge - ZooNation',
+    venue: "Sadler's Wells East",
+    genre: 'Jazz',
+    startDate: '2026-11-24',
+    endDate: '2027-01-03',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2024/12/ZooNation-Ebony-Scrooge.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/ebony-scrooge-zoonation-2026/#book',
   },
   {
     title: 'Aditi Mangaldas Dance Company – WITHIN',
