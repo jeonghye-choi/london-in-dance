@@ -57,6 +57,15 @@ export const royalOperaHousePerformances: Performance[] = [
       'https://www.rbo.org.uk/tickets-and-events/manon-by-kenneth-macmillan-details',
   },
   {
+    title: 'Visionaries: Robbins and MacMillan',
+    venue: 'Royal Opera House',
+    genre: 'Ballet',
+    startDate: '2026-11-09',
+    endDate: '2026-11-28',
+    ticketUrl:
+      'https://www.rbo.org.uk/production/visionaries-robbins-and-macmillan',
+  },
+  {
     title: 'Madam',
     venue: 'Linbury Theatre',
     genre: 'Ballet',
@@ -95,5 +104,38 @@ export const royalOperaHousePerformances: Performance[] = [
     imageUrl:
       'https://images.prismic.io/royal-opera-house/aal8_lxvIZEnjW6q_HERO_LANDMARKS_AshtonMixedBill-17-10-14-RoyalBallet-1876.jpg',
     ticketUrl: 'https://www.rbo.org.uk/production/landmarks-unmissable-ashton',
+  },
+  {
+    title: 'Once more, to this star – Pam Tanowitz',
+    venue: 'Linbury Theatre',
+    genre: 'Contemporary',
+    startDate: '2027-02-06',
+    endDate: '2027-02-13',
+    ticketUrl: 'https://www.rbo.org.uk/production/once-more-to-this-star',
+  },
+  {
+    title: 'MADDADDAM',
+    venue: 'Royal Opera House',
+    genre: 'Contemporary',
+    startDate: '2027-02-22',
+    endDate: '2027-03-13',
+    ticketUrl: 'https://www.rbo.org.uk/tickets-and-events/maddaddam-details',
+  },
+  {
+    title: 'Swan Lake',
+    venue: 'Royal Opera House',
+    genre: 'Ballet',
+    startDate: '2027-03-27',
+    endDate: '2027-05-31',
+    ticketUrl: 'https://www.rbo.org.uk/production/swan-lake-marius-petipa',
+  },
+  {
+    title: 'Disruptors: Tanowitz, Junker, Khan, McGregor',
+    venue: 'Royal Opera House',
+    genre: 'Contemporary',
+    startDate: '2027-05-06',
+    endDate: '2027-05-25',
+    ticketUrl:
+      'https://www.rbo.org.uk/production/disruptors-tanowitz-junker-khan-mcgregor',
   },
 ];

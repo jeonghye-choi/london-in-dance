@@ -176,6 +176,27 @@ export const sadlersWellsPerformances: Performance[] = [
       'https://www.sadlerswells.com/whats-on/aakash-odedra-company-songs-of-the-bulbul/#book',
   },
   {
+    title: 'YFX 2026: Boy Blue Frontline Youth Battle',
+    venue: "Sadler's Wells East",
+    genre: 'Jazz',
+    startDate: '2026-07-18',
+    endDate: '2026-07-18',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/05/yfx_boy_blue.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/yfx-boy-blue-frontline-youth-battle/#book',
+  },
+  {
+    title: 'YFX presents: National Youth Dance Company x Alleyne Dance',
+    venue: "Sadler's Wells East",
+    genre: 'Contemporary',
+    startDate: '2026-07-18',
+    endDate: '2026-07-18',
+    imageUrl: 'https://images.sadlerswells.com/uploads/2026/05/yfx_alleyne.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/yfx-2026-nydc-alleyne-dance/#book',
+  },
+  {
     title: "Matthew Bourne's New Adventures – The Car Man",
     venue: "Sadler's Wells Theatre",
     genre: 'Contemporary',
@@ -185,6 +206,92 @@ export const sadlersWellsPerformances: Performance[] = [
       'https://images.sadlerswells.com/uploads/2025/09/LEAD-IMAGE_The-Car-Man_2700x1080-scaled.jpg',
     ticketUrl:
       'https://www.sadlerswells.com/whats-on/matthew-bournes-new-adventures-the-car-man/#book',
+  },
+  {
+    title: 'National Youth Ballet - Echoes of Tomorrow',
+    venue: "Sadler's Wells Theatre",
+    genre: 'Ballet',
+    startDate: '2026-09-05',
+    endDate: '2026-09-05',
+    imageUrl: 'https://images.sadlerswells.com/uploads/2026/05/nyb_guest.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/national-youth-ballet-echoes-of-tomorrow/#book',
+  },
+  {
+    title: 'San Francisco Ballet - Mere Mortals',
+    venue: "Sadler's Wells Theatre",
+    genre: 'Contemporary',
+    startDate: '2026-09-09',
+    endDate: '2026-09-12',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2025/12/SFB2025SPH_KS10_0166_MM_03_2700x1080_2Studio-Schuller-scaled_960x960_acf_cropped.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/san-francisco-ballet-mere-mortals/#book',
+  },
+  {
+    title: 'Alvin Ailey American Dance Theater - New Works',
+    venue: "Sadler's Wells Theatre",
+    genre: 'Contemporary',
+    startDate: '2026-09-15',
+    endDate: '2026-09-19',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2025/12/LEAD-IMAGE_Alvin-Ailey-New-Works_Paul-Kolnik_2700x1080-scaled.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/alvin-ailey-american-dance-theater-new-works/#book',
+  },
+  {
+    title: 'English National Ballet - Rhythm Riot',
+    venue: "Sadler's Wells Theatre",
+    genre: 'Ballet',
+    startDate: '2026-09-24',
+    endDate: '2026-10-03',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/03/Rhythm-Riot-image-by-Jason-Bell-creative-direction-Charlotte-Wilkinson-Studio-scaled.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/english-national-ballet-rhythm-riot/#book',
+  },
+  {
+    title: 'National Dance Company Wales - Blue | Glas',
+    venue: "Sadler's Wells East",
+    genre: 'Contemporary',
+    startDate: '2026-09-24',
+    endDate: '2026-09-26',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/05/LEAD-IMAGE_National-Dance-Company-Wales-Blue-Glas_EllyWel-Photography-_2700x1080-scaled.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/national-dance-company-wales-blue-glas/#book',
+  },
+  {
+    title: 'Flamenc Oh!!',
+    venue: 'Peacock Theatre',
+    genre: 'National Dance',
+    startDate: '2026-09-30',
+    endDate: '2026-10-10',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/06/New-Project-65.jpg',
+    ticketUrl: 'https://www.sadlerswells.com/whats-on/flamenc-oh/#book',
+  },
+  {
+    title: 'Jess & Morgs - DEEPFAKE',
+    venue: "Sadler's Wells East",
+    genre: 'Contemporary',
+    startDate: '2026-10-01',
+    endDate: '2026-10-03',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/05/LEAD-IMAGE_Jess-Morgs-DEEPFAKE_2700x1080-scaled.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/jess-morgs-deepfake/#book',
+  },
+  {
+    title: 'Acosta Danza - Cuban Baroque',
+    venue: "Sadler's Wells Theatre",
+    genre: 'Contemporary',
+    startDate: '2026-10-07',
+    endDate: '2026-10-10',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/04/LEAD-IMAGE_Acosta-Danza-Cuban-Baroque_Johan-Persson_2700x1080px-scaled.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/acosta-danza-cuban-baroque/#book',
   },
   {
     title: 'Dance Umbrella - THE HERD/LESS',
@@ -411,6 +518,28 @@ export const sadlersWellsPerformances: Performance[] = [
     imageUrl:
       'https://images.sadlerswells.com/uploads/2026/06/LEAD-IMAGE_Martha_GrahamHibbard-Nash_2700x1080-1-scaled-e1781085715197.jpg',
     ticketUrl: 'https://www.sadlerswells.com/whats-on/martha-graham-100/#book',
+  },
+  {
+    title: 'Martha Graham Dance Company – Inner Landscape (Programme A)',
+    venue: "Sadler's Wells Theatre",
+    genre: 'Contemporary',
+    startDate: '2027-01-20',
+    endDate: '2027-01-23',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/06/martha_graham_a-scaled.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/martha-graham-dance-programme-a/#book',
+  },
+  {
+    title: 'Martha Graham Dance Company – Dancing Our Times (Programme B)',
+    venue: "Sadler's Wells Theatre",
+    genre: 'Contemporary',
+    startDate: '2027-01-21',
+    endDate: '2027-01-23',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/06/martha_graham_programme_b-scaled.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/martha-graham-dance-programme-b/#book',
   },
   {
     title: 'TAO Dance Theater / Tao Ye 13 & 14',
