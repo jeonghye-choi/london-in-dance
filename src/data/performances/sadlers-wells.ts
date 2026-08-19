@@ -240,6 +240,17 @@ export const sadlersWellsPerformances: Performance[] = [
       'https://www.sadlerswells.com/whats-on/alvin-ailey-american-dance-theater-new-works/#book',
   },
   {
+    title: 'Alvin Ailey American Dance Theater - Legacy',
+    venue: "Sadler's Wells Theatre",
+    genre: 'Contemporary',
+    startDate: '2026-09-16',
+    endDate: '2026-09-19',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/01/LEAD-IMAGE_Alvin-Ailey-American-Dance-Theater-Legacy_Daniel-Azoulay_2700x1080-scaled.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/alvin-ailey-american-dance-theater-legacy/#book',
+  },
+  {
     title: 'English National Ballet - Rhythm Riot',
     venue: "Sadler's Wells Theatre",
     genre: 'Ballet',
@@ -388,6 +399,16 @@ export const sadlersWellsPerformances: Performance[] = [
       'https://images.sadlerswells.com/uploads/2026/04/swan_lake-e1778256872204.jpg',
     ticketUrl:
       'https://www.sadlerswells.com/whats-on/birmingham-royal-ballet-swan-lake-2026/#book',
+  },
+  {
+    title: 'The Snowman',
+    venue: 'Peacock Theatre',
+    genre: 'Contemporary',
+    startDate: '2026-11-21',
+    endDate: '2027-01-03',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/02/LEAD-IMAGE_Birmingham-Repertory-Theatre-The-Snowman_2700x1080-scaled.jpg',
+    ticketUrl: 'https://www.sadlerswells.com/whats-on/the-snowman-2026/#book',
   },
   {
     title: 'Emanuel Gat Dance – FIVE DAYS IN THE SUN',
@@ -592,5 +613,46 @@ export const sadlersWellsPerformances: Performance[] = [
     imageUrl: 'https://images.sadlerswells.com/uploads/2026/04/dorothee.jpg',
     ticketUrl:
       'https://www.sadlerswells.com/whats-on/dorothee-munyaneza-cie-kadidi-umuko/#book',
+  },
+  {
+    title: 'S-E-D / Sharon Eyal – Delay the Sadness',
+    venue: "Sadler's Wells Theatre",
+    genre: 'Contemporary',
+    startDate: '2027-02-04',
+    endDate: '2027-02-06',
+    imageUrl: 'https://images.sadlerswells.com/uploads/2026/03/sharon_eyal.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/s-e-d-sharon-eyal-delay-the-sadness/#book',
+  },
+  {
+    title: 'Davi Pontes & Wallace Ferreira – Repertório N.3',
+    venue: "Sadler's Wells East",
+    genre: 'Contemporary',
+    startDate: '2027-02-05',
+    endDate: '2027-02-06',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/03/davi_rose-prize.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/pontes-ferreira-repertorio-n3/#book',
+  },
+  {
+    title: 'Jade Hackett and Omar – The LOve Book',
+    venue: "Sadler's Wells East",
+    genre: 'Jazz',
+    startDate: '2027-02-12',
+    endDate: '2027-02-20',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/05/The-LOve-Book-scaled.jpg',
+    ticketUrl: 'https://www.sadlerswells.com/whats-on/the-love-book/#book',
+  },
+  {
+    title: "Rambert – It's a Sin",
+    venue: "Sadler's Wells Theatre",
+    genre: 'Contemporary',
+    startDate: '2027-10-05',
+    endDate: '2027-10-16',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/05/LEAD-IMAGE_Rambert-Its-a-Sin_TBC_2700x1080-scaled.jpg',
+    ticketUrl: 'https://www.sadlerswells.com/whats-on/its-a-sin-rambert/#book',
   },
 ];

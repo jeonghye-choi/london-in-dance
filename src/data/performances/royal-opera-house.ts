@@ -138,4 +138,24 @@ export const royalOperaHousePerformances: Performance[] = [
     ticketUrl:
       'https://www.rbo.org.uk/production/disruptors-tanowitz-junker-khan-mcgregor',
   },
+  {
+    title: 'Manon',
+    venue: 'Royal Opera House',
+    genre: 'Ballet',
+    startDate: '2027-06-08',
+    endDate: '2027-07-02',
+    imageUrl:
+      'https://images.prismic.io/royal-opera-house/acv_oZGXnQHGZJC4_HERO_2627_MANON_20240115_TheRoyalBallet_Manon_Hayward_Sambe_ROH_%C2%A9FoteiniChristofilopoulou-123.jpg',
+    ticketUrl: 'https://www.rbo.org.uk/production/manon-kenneth-macmillan',
+  },
+  {
+    title: 'Heritage Classics',
+    venue: 'Royal Opera House',
+    genre: 'Ballet',
+    startDate: '2027-06-17',
+    endDate: '2027-07-03',
+    imageUrl:
+      'https://images.prismic.io/royal-opera-house/W47EacZayRnSlBS2_TripleBill-RoyalBallet-18-10-19-ROH-466.jpg',
+    ticketUrl: 'https://www.rbo.org.uk/production/heritage-classics',
+  },
 ];
