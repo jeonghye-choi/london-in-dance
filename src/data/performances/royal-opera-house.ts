@@ -2,39 +2,6 @@ import { Performance } from '@/types/performance';
 
 export const royalOperaHousePerformances: Performance[] = [
   {
-    title: 'La Fille mal gardée',
-    venue: 'Royal Opera House',
-    genre: 'Ballet',
-    startDate: '2026-05-23',
-    endDate: '2026-06-09',
-    imageUrl:
-      'https://images.prismic.io/royal-opera-house/aCN7dSdWJ-7kSCSQ_FilleROH26061_f7_2.jpg',
-    ticketUrl:
-      'https://www.rbo.org.uk/tickets-and-events/la-fille-mal-gardee-dates',
-  },
-  {
-    title: 'So Are We: León and Lightfoot',
-    venue: 'Royal Opera House',
-    genre: 'Contemporary',
-    startDate: '2026-06-11',
-    endDate: '2026-06-20',
-    imageUrl:
-      'https://images.prismic.io/royal-opera-house/aUmJOHNYClf9olcw_LM-5_FINALCROP.jpg',
-    ticketUrl:
-      'https://www.rbo.org.uk/tickets-and-events/so-are-we-leon-and-lightfoot-dates',
-  },
-  {
-    title: 'Next Generation Festival 2026',
-    venue: 'Linbury Theatre',
-    genre: 'Ballet',
-    startDate: '2026-06-21',
-    endDate: '2026-07-04',
-    imageUrl:
-      'https://images.prismic.io/royal-opera-house/Z9GAoxsAHJWomb76_HERONEXTGENFESTIVAL_ClarkEselgrothinReijaWa%CC%88re%27sClique%2CFinnishNationalBallet%C2%A9RoosaOksaharju.jpg',
-    ticketUrl:
-      'https://www.rbo.org.uk/tickets-and-events/festival/next-generation-festival-2026-dates',
-  },
-  {
     title: 'A Centenary Celebration',
     venue: 'Royal Opera House',
     genre: 'Ballet',
