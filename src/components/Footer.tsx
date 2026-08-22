@@ -1,6 +1,7 @@
 import { INSTAGRAM_URL, LINKEDIN_URL } from '@/constants';
+import { memo } from 'react';
 
-export default function Footer() {
+function Footer() {
   return (
     <footer className="border-t border-black bg-white">
       <div className="container py-8">
@@ -39,3 +40,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+export default memo(Footer);

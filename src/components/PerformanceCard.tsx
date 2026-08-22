@@ -1,5 +1,5 @@
 import { DEFAULT_IMAGE } from '@/constants';
-import { formatStartDate } from '@/lib/formatDate';
+import { formatStartDate } from '@/utils/formatDate';
 import { Performance } from '@/types/performance';
 
 interface PerformanceCardProps {

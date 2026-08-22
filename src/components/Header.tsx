@@ -1,6 +1,7 @@
 import { LAST_UPDATED } from '@/constants';
+import { memo } from 'react';
 
-export default function Header() {
+function Header() {
   const formatted = new Date(LAST_UPDATED).toLocaleDateString('en-GB', {
     year: 'numeric',
     month: 'short',
@@ -21,3 +22,5 @@ export default function Header() {
     </header>
   );
 }
+
+export default memo(Header);

@@ -1,9 +1,10 @@
 import { INSTAGRAM_URL } from '@/constants';
 import { performances } from '@/data/performances';
+import { memo } from 'react';
 
-export default function Hero() {
+function Hero() {
   return (
-    <section className="pt-20 pb-10 md:pt-24 pb-4 md:pb-6">
+    <section className="pt-20 pb-10 md:pt-24 md:pb-6">
       <div className="container">
         <div className="max-w-4xl mb-3 md:mb-4">
           <h2
@@ -37,3 +38,5 @@ export default function Hero() {
     </section>
   );
 }
+
+export default memo(Hero);

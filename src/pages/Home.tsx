@@ -1,29 +1,33 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import FilterBar from '@/components/FilterBar';
 import PerformanceCard from '@/components/PerformanceCard';
 import Footer from '@/components/Footer';
-import { useFilteredPerformances } from '@/hooks/useFilteredPerformances';
+import FilterBarTest from '@/components/FilterBar';
+import { useFilteredPerformancesTest } from '@/hooks/useFilteredPerformances';
 
-export default function Home() {
+export default function HomeTest() {
   const {
     filteredPerformances,
-    selectedGenre,
-    selectedDate,
-    setSelectedGenre,
-    setSelectedDate,
-  } = useFilteredPerformances();
+    selectedGenres,
+    selectedDatePreset,
+    onGenresChange,
+    onDatePresetChange,
+    onClearGenre,
+    onClearDatePreset,
+  } = useFilteredPerformancesTest();
 
   return (
     <div className="min-h-screen bg-white text-black">
       <Header />
       <main className="pt-8">
         <Hero />
-        <FilterBar
-          selectedGenre={selectedGenre}
-          selectedDate={selectedDate}
-          onGenreChange={setSelectedGenre}
-          onDateChange={setSelectedDate}
+        <FilterBarTest
+          selectedGenres={selectedGenres}
+          selectedDatePreset={selectedDatePreset}
+          onGenresChange={onGenresChange}
+          onDatePresetChange={onDatePresetChange}
+          onClearGenre={onClearGenre}
+          onClearDatePreset={onClearDatePreset}
         />
         <section className="pb-10 md:pb-16">
           <div className="container">

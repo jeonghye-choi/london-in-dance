@@ -1,46 +1,28 @@
 import { useEffect, useRef, useState } from 'react';
-import { Genre } from '@/types/performance';
-
-export type DateFilter = 'all' | 'now' | 'thisWeek' | 'thisMonth';
-
-const GENRE_LABELS: Record<Genre | 'All', string> = {
-  All: 'All',
-  Ballet: 'Ballet',
-  Contemporary: 'Contemporary',
-  Jazz: 'Jazz',
-  'National Dance': 'National Dance',
-};
-
-const DATE_LABELS: Record<DateFilter, string> = {
-  all: 'All',
-  now: 'Now On',
-  thisWeek: 'This Week',
-  thisMonth: 'This Month',
-};
+import { DatePreset, DATE_PRESETS, Genre, GENRES } from '@/types/performance';
 
 interface FilterBarProps {
-  selectedGenre: Genre | 'All';
-  selectedDate: DateFilter;
-  onGenreChange: (genre: Genre | 'All') => void;
-  onDateChange: (date: DateFilter) => void;
+  selectedGenres: Genre[];
+  selectedDatePreset: DatePreset | null;
+  onGenresChange: (genre: Genre) => void;
+  onDatePresetChange: (preset: DatePreset) => void;
+  onClearGenre: () => void;
+  onClearDatePreset: () => void;
 }
 
-export default function FilterBar({
-  selectedGenre,
-  selectedDate,
-  onGenreChange,
-  onDateChange,
+export default function FilterBarTest({
+  selectedGenres,
+  selectedDatePreset,
+  onGenresChange,
+  onDatePresetChange,
+  onClearGenre,
+  onClearDatePreset,
 }: FilterBarProps) {
-  const genreOptions: (Genre | 'All')[] = [
-    'All',
-    'Ballet',
-    'Contemporary',
-    'Jazz',
-    'National Dance',
-  ];
-  const dateOptions: DateFilter[] = ['all', 'now', 'thisWeek', 'thisMonth'];
   const [isSticky, setIsSticky] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+
+  const isAllGenresSelected = selectedGenres.length === 0;
+  const isAllDatePresetSelected = selectedDatePreset === null;
 
   useEffect(() => {
     const sentinel = document.createElement('div');
@@ -72,17 +54,28 @@ export default function FilterBar({
               Genre
             </p>
             <div className="flex flex-wrap gap-1">
-              {genreOptions.map(genre => (
+              <button
+                onClick={onClearGenre}
+                className={`text-[10px] font-medium px-2 py-1 border rounded-full transition-all duration-150 whitespace-nowrap ${
+                  isAllGenresSelected
+                    ? 'border-black bg-black text-white'
+                    : 'border-black text-black hover:bg-gray-50'
+                }`}
+              >
+                All
+              </button>
+
+              {GENRES.map(genre => (
                 <button
                   key={genre}
-                  onClick={() => onGenreChange(genre)}
+                  onClick={() => onGenresChange(genre)}
                   className={`text-[10px] font-medium px-2 py-1 border rounded-full transition-all duration-150 whitespace-nowrap ${
-                    selectedGenre === genre
+                    selectedGenres.includes(genre)
                       ? 'border-black bg-black text-white'
                       : 'border-black text-black hover:bg-gray-50'
                   }`}
                 >
-                  {GENRE_LABELS[genre]}
+                  {genre}
                 </button>
               ))}
             </div>
@@ -93,17 +86,27 @@ export default function FilterBar({
               Date
             </p>
             <div className="flex flex-wrap gap-1">
-              {dateOptions.map(date => (
+              <button
+                onClick={onClearDatePreset}
+                className={`text-[10px] font-medium px-2 py-1 border rounded-full transition-all duration-150 whitespace-nowrap ${
+                  isAllDatePresetSelected
+                    ? 'border-black bg-black text-white'
+                    : 'border-black text-black hover:bg-gray-50'
+                }`}
+              >
+                All
+              </button>
+              {DATE_PRESETS.map(preset => (
                 <button
-                  key={date}
-                  onClick={() => onDateChange(date)}
+                  key={preset}
+                  onClick={() => onDatePresetChange(preset)}
                   className={`text-[10px] font-medium px-2 py-1 border rounded-full transition-all duration-150 whitespace-nowrap ${
-                    selectedDate === date
+                    selectedDatePreset === preset
                       ? 'border-black bg-black text-white'
                       : 'border-black text-black hover:bg-gray-50'
                   }`}
                 >
-                  {DATE_LABELS[date]}
+                  {preset}
                 </button>
               ))}
             </div>
