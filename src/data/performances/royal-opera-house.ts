@@ -13,6 +13,15 @@ export const royalOperaHousePerformances: Performance[] = [
       'https://www.rbo.org.uk/production/a-centenary-celebration-the-royal-ballet-school',
   },
   {
+    title: 'Three Short Ballets',
+    venue: 'Linbury Theatre',
+    genre: 'Contemporary',
+    startDate: '2026-09-29',
+    endDate: '2026-10-02',
+    ticketUrl:
+      'https://www.rbo.org.uk/production/three-short-ballets-northern-ballet',
+  },
+  {
     title: 'Manon',
     venue: 'Royal Opera House',
     genre: 'Ballet',
@@ -87,6 +96,14 @@ export const royalOperaHousePerformances: Performance[] = [
     startDate: '2027-02-22',
     endDate: '2027-03-13',
     ticketUrl: 'https://www.rbo.org.uk/tickets-and-events/maddaddam-details',
+  },
+  {
+    title: 'Ballet Black',
+    venue: 'Linbury Theatre',
+    genre: 'Ballet',
+    startDate: '2027-03-22',
+    endDate: '2027-03-27',
+    ticketUrl: 'https://www.rbo.org.uk/production/ballet-black-27',
   },
   {
     title: 'Swan Lake',

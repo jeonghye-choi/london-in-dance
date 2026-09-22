@@ -78,6 +78,16 @@ export const sadlersWellsPerformances: Performance[] = [
       'https://www.sadlerswells.com/whats-on/national-dance-company-wales-blue-glas/#book',
   },
   {
+    title: "Eliza: A Bloomin' New Ballet",
+    venue: 'Lilian Baylis Studio',
+    genre: 'Ballet',
+    startDate: '2026-09-29',
+    endDate: '2026-09-29',
+    imageUrl: 'https://images.sadlerswells.com/uploads/2026/08/template-2.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/eliza-a-bloomin-new-ballet/',
+  },
+  {
     title: 'Flamenc Oh!!',
     venue: 'Peacock Theatre',
     genre: 'National Dance',
@@ -378,6 +388,16 @@ export const sadlersWellsPerformances: Performance[] = [
       'https://www.sadlerswells.com/whats-on/tao-dance-theater-tao-ye-13-14/#book',
   },
   {
+    title: 'Shochiku – KABUKI',
+    venue: "Sadler's Wells Theatre",
+    genre: 'National Dance',
+    startDate: '2027-01-30',
+    endDate: '2027-01-31',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/09/kabuki_guest_event.jpg',
+    ticketUrl: 'https://www.sadlerswells.com/whats-on/shochiku-kabuki/#book',
+  },
+  {
     title: "Chara Kotsali – IT'S THE END OF THE AMUSEMENT PHASE",
     venue: 'Lilian Baylis Studio',
     genre: 'Contemporary',
@@ -449,6 +469,28 @@ export const sadlersWellsPerformances: Performance[] = [
     imageUrl:
       'https://images.sadlerswells.com/uploads/2026/05/The-LOve-Book-scaled.jpg',
     ticketUrl: 'https://www.sadlerswells.com/whats-on/the-love-book/#book',
+  },
+  {
+    title: 'Jasmin Vardimon Company – Lullaby',
+    venue: "Sadler's Wells East",
+    genre: 'Contemporary',
+    startDate: '2027-02-24',
+    endDate: '2027-02-27',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/08/LEAD-IMAGE-Jasmin-Vardimon-Lullaby--Ben-Harries-scaled.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/jasmin-vardimon-company-lullaby/#book',
+  },
+  {
+    title: 'São Paulo Dance Company – Brazilian Perspectives',
+    venue: "Sadler's Wells Theatre",
+    genre: 'Contemporary',
+    startDate: '2027-02-25',
+    endDate: '2027-02-27',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/08/LEAD-IMAGE-Brazilian-Perspectives-SPDC-2700-x-1080--Iari-Davies-scaled.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/sao-paulo-dance-company-brazilian-perspectives/#book',
   },
   {
     title: "Rambert – It's a Sin",

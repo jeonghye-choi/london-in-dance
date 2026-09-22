@@ -53,4 +53,14 @@ export const londonColiseumPerformances: Performance[] = [
     ticketUrl:
       'https://londoncoliseum.org/events/ballet-icons-gala-2027-entering-the-third-decade/#calendar',
   },
+  {
+    title: 'Swan Lake – Ballet de Santiago',
+    venue: 'London Coliseum',
+    genre: 'Ballet',
+    startDate: '2027-09-21',
+    endDate: '2027-09-25',
+    imageUrl:
+      'https://londoncoliseum.org/wp-content/uploads/2026/08/SB-SL-Col-onsale-2000x1000-1-850x478.jpg',
+    ticketUrl: 'https://londoncoliseum.org/events/swan-lake/#calendar',
+  },
 ];
