@@ -2,16 +2,6 @@ import { Performance } from '@/types/performance';
 
 export const londonColiseumPerformances: Performance[] = [
   {
-    title: 'Swan Lake – State Ballet of Georgia',
-    venue: 'London Coliseum',
-    genre: 'Ballet',
-    startDate: '2026-07-17',
-    endDate: '2026-07-26',
-    imageUrl:
-      'https://londoncoliseum.org/wp-content/uploads/2026/03/SLGC-onsale-2000x1000-1-850x478.jpg',
-    ticketUrl: 'https://londoncoliseum.org/events/swan-lake/#calendar',
-  },
-  {
     title: 'The Margot Fonteyn International Ballet Competition – Final',
     venue: 'London Coliseum',
     genre: 'Ballet',
