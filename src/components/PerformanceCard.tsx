@@ -6,6 +6,29 @@ interface PerformanceCardProps {
   performance: Performance;
 }
 
+function getCardImageUrl(imageUrl: string | undefined) {
+  if (!imageUrl) return DEFAULT_IMAGE;
+
+  const url = new URL(imageUrl, window.location.origin);
+
+  if (url.hostname === 'images.sadlerswells.com') {
+    url.searchParams.set('resize', '720,900');
+    url.searchParams.set('webp', '1');
+    return url.href;
+  }
+
+  if (url.hostname === 'images.prismic.io') {
+    url.searchParams.set('w', '720');
+    url.searchParams.set('h', '900');
+    url.searchParams.set('fit', 'crop');
+    url.searchParams.set('fm', 'webp');
+    url.searchParams.set('q', '75');
+    return url.href;
+  }
+
+  return imageUrl;
+}
+
 export default function PerformanceCard({ performance }: PerformanceCardProps) {
   return (
     <div className="text-left card-border flex flex-col">
@@ -13,11 +36,14 @@ export default function PerformanceCard({ performance }: PerformanceCardProps) {
       <div className="p-5 lg:p-7">
         <div className="aspect-[4/3] md:aspect-[3/4] bg-gray-100 overflow-hidden">
           <img
-            src={performance.imageUrl ?? DEFAULT_IMAGE}
+            src={getCardImageUrl(performance.imageUrl)}
             alt={performance.title}
+            loading="lazy"
             className="w-full h-full object-cover"
             onError={e => {
-              e.currentTarget.src = DEFAULT_IMAGE;
+              if (e.currentTarget.getAttribute('src') !== DEFAULT_IMAGE) {
+                e.currentTarget.src = DEFAULT_IMAGE;
+              }
             }}
           />
         </div>
