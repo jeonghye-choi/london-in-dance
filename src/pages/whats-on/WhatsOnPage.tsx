@@ -3,7 +3,7 @@ import Hero from '@/components/Hero';
 import PerformanceCard from '@/components/PerformanceCard';
 import Footer from '@/components/Footer';
 import FilterBar from '@/components/FilterBar';
-import { useFilteredPerformancesTest } from '@/hooks/useFilteredPerformances';
+import { useFilteredPerformances } from '@/pages/whats-on/useFilteredPerformances';
 
 export default function WhatsOnPage() {
   const {
@@ -14,7 +14,7 @@ export default function WhatsOnPage() {
     onDatePresetChange,
     onClearGenre,
     onClearDatePreset,
-  } = useFilteredPerformancesTest();
+  } = useFilteredPerformances();
 
   return (
     <div className="min-h-screen bg-white text-black">

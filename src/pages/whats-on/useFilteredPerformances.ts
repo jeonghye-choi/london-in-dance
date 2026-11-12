@@ -6,7 +6,7 @@ import { useMemo, useState } from 'react';
 
 const upcomingPerformances = filterUpcomingPerformances(performances);
 
-export function useFilteredPerformancesTest() {
+export function useFilteredPerformances() {
   const [selectedGenres, setSelectedGenres] = useState<Genre[]>([]);
   const [selectedDatePreset, setSelectedDatePreset] =
     useState<DatePreset | null>(null);
