@@ -28,7 +28,7 @@ export default function App() {
   return (
     <ErrorBoundary>
       {!isHome && !isStories && !isStoryDetail && !isWhatsOn && !isAbout && (
-        <header className="flex justify-end px-5 pt-6 md:px-[clamp(1.25rem,5.56vw,5rem)] md:pt-[clamp(1.5rem,9vw,8rem)]">
+        <header className="page-inset flex justify-end">
           <SiteNav />
         </header>
       )}

@@ -6,7 +6,7 @@ type HomePageProps = {
 
 export default function HomePage({ navigation }: HomePageProps) {
   return (
-    <main className="mx-auto flex h-svh w-full max-w-[90rem] flex-col px-5 pb-5 pt-5 max-lg:[@media(max-height:42.5rem)]:pt-3 max-lg:[@media(max-height:42.5rem)]:pb-3 lg:pb-8 md:px-[clamp(1.25rem,5.56vw,5rem)] md:pt-[clamp(1.5rem,9svh,8rem)]">
+    <main className="page-inset flex h-svh flex-col pb-5 max-lg:[@media(max-height:42.5rem)]:pb-3 lg:pb-8">
       <header className="grid shrink-0 grid-cols-[minmax(0,1fr)_auto] items-start gap-4">
         <p className="text-sm md:text-base">Art is more than what we see.</p>
         {navigation}

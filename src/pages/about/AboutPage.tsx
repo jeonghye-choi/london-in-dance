@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import EditorialPageLayout from '@/components/EditorialPageLayout';
+import { INSTAGRAM_URL, LINKEDIN_URL } from '@/constants';
 
 type AboutPageProps = {
   navigation: ReactNode;
@@ -16,15 +17,57 @@ export default function AboutPage({ navigation }: AboutPageProps) {
         </h2>
 
         <div className="max-w-[55ch] space-y-5 text-base leading-relaxed lg:col-span-5 lg:col-start-7">
+          <h3 className="text-lg font-semibold">
+            An independently curated art journal.
+          </h3>
           <p>
-            The Story Behind is an independent journal about performances,
-            exhibitions and the people who make them.
+            The Story Behind is an independent journal of art, culture, and the
+            stories behind them.
           </p>
           <p>
-            Curated by Jeonghye Choi in London, it brings together things to see
-            and stories to read before or after you go.
+            Based in London, it brings together performances worth discovering
+            and personal reflections on art experienced firsthand.
           </p>
-          <p className="pt-3 text-xs text-muted">Jeonghye Choi</p>
+          <p>
+            Beyond what we see on stage or in a gallery, there's so much more to
+            explore — the people, ideas, and creative processes behind the work,
+            and the thoughts and feelings it leaves with us.
+          </p>
+          <section className="space-y-3 pt-6">
+            <h3 className="text-lg font-semibold">About the editor</h3>
+            <p>
+              I’m Jeonghye Choi, a front-end developer based in London with a
+              love of dance. I started The Story Behind as a place to write
+              about the work I see and the questions I leave with.
+            </p>
+          </section>
+
+          <section className="space-y-3 pt-6">
+            <h3 className="text-lg font-semibold">Get in touch</h3>
+            <p>
+              For creative collaborations, exhibition or performance
+              invitations, or to discuss supporting the journal, I’d love to
+              hear from you.
+            </p>
+            <p>I’m also open to front-end development opportunities.</p>
+            <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm underline-offset-4">
+              <li>
+                <a href={INSTAGRAM_URL} className="underline">
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a href={LINKEDIN_URL} className="underline">
+                  LinkedIn
+                </a>
+              </li>
+              <li>
+                <a href="mailto:rojenna.lev@gmail.com" className="underline">
+                  rojenna.lev@gmail.com
+                </a>
+              </li>
+            </ul>
+          </section>
         </div>
       </section>
     </EditorialPageLayout>

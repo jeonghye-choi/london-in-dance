@@ -12,9 +12,14 @@
   --font-family-body: 'Roboto', sans-serif;
 }
 
+@utility page-inset {
+  @apply mx-auto w-full max-w-[90rem] px-5 pt-5 md:px-[clamp(1.25rem,5.56vw,5rem)] md:pt-[clamp(1.5rem,9svh,8rem)] max-lg:[@media(max-height:42.5rem)]:pt-3;
+}
+
 @layer base {
   html {
     font-family: var(--font-family-body);
+    scrollbar-gutter: stable;
   }
 
   body {
