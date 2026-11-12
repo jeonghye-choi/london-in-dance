@@ -9,6 +9,7 @@ export default function App() {
   const [isHome] = useRoute('/');
   const [isStories] = useRoute('/stories');
   const [isStoryDetail] = useRoute('/stories/:slug');
+  const [isAbout] = useRoute('/about');
   const [isWhatsOn] = useRoute('/whats-on');
   const [pageLoaded, setPageLoaded] = useState(false);
 
@@ -26,7 +27,7 @@ export default function App() {
 
   return (
     <ErrorBoundary>
-      {!isHome && !isStories && !isStoryDetail && !isWhatsOn && (
+      {!isHome && !isStories && !isStoryDetail && !isWhatsOn && !isAbout && (
         <header className="flex justify-end px-5 pt-6 md:px-[clamp(1.25rem,5.56vw,5rem)] md:pt-[clamp(1.5rem,9vw,8rem)]">
           <SiteNav />
         </header>

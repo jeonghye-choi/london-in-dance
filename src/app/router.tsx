@@ -23,7 +23,9 @@ export default function Router() {
       <Route path="/stories/:slug">
         {({ slug }) => <StoryDetailPage slug={slug} navigation={<SiteNav />} />}
       </Route>
-      <Route path="/about" component={AboutPage} />
+      <Route path="/about">
+        <AboutPage navigation={<SiteNav />} />
+      </Route>
       <Route component={NotFound} />
     </Switch>
   );
