@@ -1,24 +1,15 @@
-import { Route, Switch } from 'wouter';
 import { Analytics } from '@vercel/analytics/react';
 import { useEffect, useState } from 'react';
-import Home from './pages/Home';
-import NotFound from './pages/NotFound';
-import ErrorBoundary from './components/ErrorBoundary';
-
-function Router() {
-  return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route component={NotFound} />
-    </Switch>
-  );
-}
+import ErrorBoundary from '@/components/ErrorBoundary';
+import Router from './router';
+import SiteNav from './SiteNav';
 
 export default function App() {
   const [pageLoaded, setPageLoaded] = useState(false);
 
   useEffect(() => {
     const onLoad = () => setPageLoaded(true);
+
     if (document.readyState === 'complete') {
       onLoad();
       return;
@@ -30,6 +21,7 @@ export default function App() {
 
   return (
     <ErrorBoundary>
+      <SiteNav />
       <Router />
       {pageLoaded && <Analytics />}
     </ErrorBoundary>

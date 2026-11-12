@@ -2,10 +2,10 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import PerformanceCard from '@/components/PerformanceCard';
 import Footer from '@/components/Footer';
-import FilterBarTest from '@/components/FilterBar';
+import FilterBar from '@/components/FilterBar';
 import { useFilteredPerformancesTest } from '@/hooks/useFilteredPerformances';
 
-export default function HomeTest() {
+export default function HomePage() {
   const {
     filteredPerformances,
     selectedGenres,
@@ -21,7 +21,7 @@ export default function HomeTest() {
       <Header />
       <main className="pt-8">
         <Hero />
-        <FilterBarTest
+        <FilterBar
           selectedGenres={selectedGenres}
           selectedDatePreset={selectedDatePreset}
           onGenresChange={onGenresChange}
