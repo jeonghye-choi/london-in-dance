@@ -15,7 +15,9 @@ export default function Router() {
         <HomePage navigation={<SiteNav />} />
       </Route>
       <Route path="/whats-on" component={WhatsOnPage} />
-      <Route path="/stories" component={StoriesPage} />
+      <Route path="/stories">
+        <StoriesPage navigation={<SiteNav />} />
+      </Route>
       <Route path="/stories/:slug">
         {({ slug }) => <StoryDetailPage slug={slug} />}
       </Route>
