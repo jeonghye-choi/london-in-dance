@@ -2,24 +2,24 @@ import { Link } from 'wouter';
 
 export default function SiteNav() {
   return (
-    <header className="border-b border-black">
-      <div className="container flex flex-wrap items-center justify-between gap-4 py-4">
-        <Link href="/" className="font-bold">
-          The Story Behind
+    <header className="flex justify-end px-5 pt-6 md:px-[clamp(1.25rem,5.56vw,5rem)] md:pt-[clamp(1.5rem,9vw,8rem)]">
+      <nav
+        aria-label="Main navigation"
+        className="flex flex-wrap justify-end gap-x-4 gap-y-2 text-sm md:flex-col md:items-end md:gap-3 md:text-base"
+      >
+        <Link href="/" className="hover:underline">
+          Home
         </Link>
-
-        <nav aria-label="Main navigation" className="flex flex-wrap gap-4">
-          <Link href="/whats-on" className="hover:underline">
-            What's On
-          </Link>
-          <Link href="/stories" className="hover:underline">
-            Stories
-          </Link>
-          <Link href="/about" className="hover:underline">
-            About
-          </Link>
-        </nav>
-      </div>
+        <Link href="/whats-on" className="hover:underline">
+          What's On
+        </Link>
+        <Link href="/stories" className="hover:underline">
+          Stories
+        </Link>
+        <Link href="/about" className="hover:underline">
+          About
+        </Link>
+      </nav>
     </header>
   );
 }

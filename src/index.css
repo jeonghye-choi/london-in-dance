@@ -1,8 +1,15 @@
 @import 'tailwindcss';
 
+@theme {
+  --color-paper: #ece9e6;
+  --color-ink: #2c2825;
+  --color-muted: #5f5955;
+  --color-line: #928b86;
+}
+
 :root {
-  --font-family-display: 'Geist', sans-serif;
-  --font-family-body: 'Outfit', sans-serif;
+  --font-family-display: 'Pretendard', sans-serif;
+  --font-family-body: 'Roboto', sans-serif;
 }
 
 @layer base {
@@ -11,7 +18,7 @@
   }
 
   body {
-    @apply bg-white text-black;
+    @apply bg-paper text-ink;
   }
 
   h1,
