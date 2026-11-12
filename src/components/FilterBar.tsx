@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from 'react';
 import { DatePreset, DATE_PRESETS, Genre, GENRES } from '@/types/performance';
 
 interface FilterBarProps {
@@ -10,7 +9,7 @@ interface FilterBarProps {
   onClearDatePreset: () => void;
 }
 
-export default function FilterBarTest({
+export default function FilterBar({
   selectedGenres,
   selectedDatePreset,
   onGenresChange,
@@ -18,99 +17,74 @@ export default function FilterBarTest({
   onClearGenre,
   onClearDatePreset,
 }: FilterBarProps) {
-  const [isSticky, setIsSticky] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
   const isAllGenresSelected = selectedGenres.length === 0;
   const isAllDatePresetSelected = selectedDatePreset === null;
-
-  useEffect(() => {
-    const sentinel = document.createElement('div');
-    ref.current?.parentElement?.insertBefore(sentinel, ref.current);
-
-    const observer = new IntersectionObserver(
-      ([entry]) => setIsSticky(!entry.isIntersecting),
-      { threshold: 0 }
-    );
-
-    observer.observe(sentinel);
-    return () => {
-      observer.disconnect();
-      sentinel.remove();
-    };
-  }, []);
-
   return (
-    <div
-      ref={ref}
-      className={`sticky top-8 z-40 bg-white transition-all duration-150 ${
-        isSticky ? 'border-b border-black' : ''
-      }`}
-    >
-      <div className="container py-3 lg:py-4">
-        <div className="flex flex-col gap-2">
-          <div className="flex items-center gap-2">
-            <p className="text-[10px] font-bold uppercase tracking-wide text-gray-900 whitespace-nowrap w-12">
-              Genre
-            </p>
-            <div className="flex flex-wrap gap-1">
-              <button
-                onClick={onClearGenre}
-                className={`text-[10px] font-medium px-2 py-1 border rounded-full transition-all duration-150 whitespace-nowrap ${
-                  isAllGenresSelected
-                    ? 'border-black bg-black text-white'
-                    : 'border-black text-black hover:bg-gray-50'
-                }`}
-              >
-                All
-              </button>
+    <div className="mx-auto grid w-fit max-w-full gap-2.5">
+      <div className="grid grid-cols-[3rem_minmax(0,1fr)] items-start gap-3">
+        <p className="pt-1.5 text-[11px] leading-4 uppercase text-ink">Genre</p>
+        <div className="flex flex-wrap gap-x-1.5 gap-y-2 sm:gap-x-2">
+          <button
+            type="button"
+            aria-pressed={isAllGenresSelected}
+            onClick={onClearGenre}
+            className={`min-h-7 whitespace-nowrap rounded-none border px-2.5 text-[11px] leading-4 uppercase transition-colors sm:px-3.5 ${
+              isAllGenresSelected
+                ? 'border-ink bg-ink text-paper'
+                : 'border-line text-ink hover:border-ink'
+            }`}
+          >
+            All
+          </button>
 
-              {GENRES.map(genre => (
-                <button
-                  key={genre}
-                  onClick={() => onGenresChange(genre)}
-                  className={`text-[10px] font-medium px-2 py-1 border rounded-full transition-all duration-150 whitespace-nowrap ${
-                    selectedGenres.includes(genre)
-                      ? 'border-black bg-black text-white'
-                      : 'border-black text-black hover:bg-gray-50'
-                  }`}
-                >
-                  {genre}
-                </button>
-              ))}
-            </div>
-          </div>
+          {GENRES.map(genre => (
+            <button
+              key={genre}
+              type="button"
+              aria-pressed={selectedGenres.includes(genre)}
+              onClick={() => onGenresChange(genre)}
+              className={`min-h-7 whitespace-nowrap rounded-none border px-2.5 text-[11px] leading-4 uppercase transition-colors sm:px-3.5 ${
+                selectedGenres.includes(genre)
+                  ? 'border-ink bg-ink text-paper'
+                  : 'border-line text-ink hover:border-ink'
+              }`}
+            >
+              {genre}
+            </button>
+          ))}
+        </div>
+      </div>
 
-          <div className="flex items-center gap-2">
-            <p className="text-[10px] font-bold uppercase tracking-wide text-gray-900 whitespace-nowrap w-12">
-              Date
-            </p>
-            <div className="flex flex-wrap gap-1">
-              <button
-                onClick={onClearDatePreset}
-                className={`text-[10px] font-medium px-2 py-1 border rounded-full transition-all duration-150 whitespace-nowrap ${
-                  isAllDatePresetSelected
-                    ? 'border-black bg-black text-white'
-                    : 'border-black text-black hover:bg-gray-50'
-                }`}
-              >
-                All
-              </button>
-              {DATE_PRESETS.map(preset => (
-                <button
-                  key={preset}
-                  onClick={() => onDatePresetChange(preset)}
-                  className={`text-[10px] font-medium px-2 py-1 border rounded-full transition-all duration-150 whitespace-nowrap ${
-                    selectedDatePreset === preset
-                      ? 'border-black bg-black text-white'
-                      : 'border-black text-black hover:bg-gray-50'
-                  }`}
-                >
-                  {preset}
-                </button>
-              ))}
-            </div>
-          </div>
+      <div className="grid grid-cols-[3rem_minmax(0,1fr)] items-start gap-3">
+        <p className="pt-1.5 text-[11px] leading-4 uppercase text-ink">Date</p>
+        <div className="flex flex-wrap gap-x-1.5 gap-y-2 sm:gap-x-2">
+          <button
+            type="button"
+            aria-pressed={isAllDatePresetSelected}
+            onClick={onClearDatePreset}
+            className={`min-h-7 whitespace-nowrap rounded-none border px-2.5 text-[11px] leading-4 uppercase transition-colors sm:px-3.5 ${
+              isAllDatePresetSelected
+                ? 'border-ink bg-ink text-paper'
+                : 'border-line text-ink hover:border-ink'
+            }`}
+          >
+            All
+          </button>
+          {DATE_PRESETS.map(preset => (
+            <button
+              key={preset}
+              type="button"
+              aria-pressed={selectedDatePreset === preset}
+              onClick={() => onDatePresetChange(preset)}
+              className={`min-h-7 whitespace-nowrap rounded-none border px-2.5 text-[11px] leading-4 uppercase transition-colors sm:px-3.5 ${
+                selectedDatePreset === preset
+                  ? 'border-ink bg-ink text-paper'
+                  : 'border-line text-ink hover:border-ink'
+              }`}
+            >
+              {preset}
+            </button>
+          ))}
         </div>
       </div>
     </div>

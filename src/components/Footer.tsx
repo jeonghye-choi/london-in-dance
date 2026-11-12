@@ -3,7 +3,7 @@ import { memo } from 'react';
 
 function Footer() {
   return (
-    <footer className="border-t border-black bg-white">
+    <footer>
       <div className="container py-8">
         <div className="flex flex-col gap-2">
           <p className="text-xs text-gray-600">

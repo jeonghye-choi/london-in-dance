@@ -30,14 +30,14 @@ function getCardImageUrl(imageUrl: string | undefined) {
 }
 
 export default function PerformanceCard({ performance }: PerformanceCardProps) {
-  return (
-    <div className="text-left card-border flex flex-col">
+  const content = (
+    <>
       {/* Image */}
-      <div className="p-5 lg:p-7">
-        <div className="aspect-[4/3] md:aspect-[3/4] bg-gray-100 overflow-hidden">
+      <div className="mb-3">
+        <div className="aspect-[2/3] bg-gray-100 overflow-hidden">
           <img
             src={getCardImageUrl(performance.imageUrl)}
-            alt={performance.title}
+            alt=""
             loading="lazy"
             className="w-full h-full object-cover"
             onError={e => {
@@ -50,9 +50,9 @@ export default function PerformanceCard({ performance }: PerformanceCardProps) {
       </div>
 
       {/* Content */}
-      <div className="px-5 lg:px-7 pb-1 space-y-1 flex-1 flex flex-col">
+      <div className="pb-1 space-y-1 flex-1 flex flex-col">
         <h3
-          className="text-sm md:text-base lg:text-lg font-semibold leading-snug"
+          className="text-sm md:text-base lg:text-lg font-semibold leading-snug group-hover:underline group-focus-visible:underline"
           style={{ fontFamily: 'var(--font-family-display)' }}
         >
           {performance.title}
@@ -63,22 +63,25 @@ export default function PerformanceCard({ performance }: PerformanceCardProps) {
         </p>
       </div>
 
-      {/* Bottom */}
-      <div className="flex items-center justify-between px-5 lg:px-7 pb-3 lg:pb-5 pt-2">
-        <p className="text-[10px] lg:text-xs text-gray-500 whitespace-nowrap">
-          {formatStartDate(performance.startDate)}
-          {performance.endDate && ` - ${formatStartDate(performance.endDate)}`}
-        </p>
+      <p className="pt-3 text-xs text-muted">
+        {formatStartDate(performance.startDate)}
+        {performance.endDate && ` - ${formatStartDate(performance.endDate)}`}
+      </p>
+    </>
+  );
 
-        <a
-          href={performance.ticketUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[10px] lg:text-xs underline text-gray-700 hover:text-black transition-colors duration-150"
-        >
-          View Details →
-        </a>
-      </div>
-    </div>
+  if (!performance.ticketUrl) {
+    return <article className="flex flex-col text-left">{content}</article>;
+  }
+
+  return (
+    <a
+      href={performance.ticketUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex flex-col text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
+    >
+      {content}
+    </a>
   );
 }

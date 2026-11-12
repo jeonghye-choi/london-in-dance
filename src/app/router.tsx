@@ -14,12 +14,14 @@ export default function Router() {
       <Route path="/">
         <HomePage navigation={<SiteNav />} />
       </Route>
-      <Route path="/whats-on" component={WhatsOnPage} />
+      <Route path="/whats-on">
+        <WhatsOnPage navigation={<SiteNav />} />
+      </Route>
       <Route path="/stories">
         <StoriesPage navigation={<SiteNav />} />
       </Route>
       <Route path="/stories/:slug">
-        {({ slug }) => <StoryDetailPage slug={slug} />}
+        {({ slug }) => <StoryDetailPage slug={slug} navigation={<SiteNav />} />}
       </Route>
       <Route path="/about" component={AboutPage} />
       <Route component={NotFound} />

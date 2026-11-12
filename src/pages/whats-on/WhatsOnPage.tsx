@@ -1,11 +1,15 @@
-import Header from '@/components/Header';
-import Hero from '@/components/Hero';
+import type { ReactNode } from 'react';
 import PerformanceCard from '@/components/PerformanceCard';
 import Footer from '@/components/Footer';
 import FilterBar from '@/components/FilterBar';
 import { useFilteredPerformances } from '@/pages/whats-on/useFilteredPerformances';
+import EditorialPageLayout from '@/components/EditorialPageLayout';
 
-export default function WhatsOnPage() {
+type WhatsOnPageProps = {
+  navigation: ReactNode;
+};
+
+export default function WhatsOnPage({ navigation }: WhatsOnPageProps) {
   const {
     filteredPerformances,
     selectedGenres,
@@ -17,41 +21,40 @@ export default function WhatsOnPage() {
   } = useFilteredPerformances();
 
   return (
-    <div className="min-h-screen bg-white text-black">
-      {/* <Header /> */}
-      {/* <main className="pt-8"> */}
-      <main>
-        <Hero />
-        <FilterBar
-          selectedGenres={selectedGenres}
-          selectedDatePreset={selectedDatePreset}
-          onGenresChange={onGenresChange}
-          onDatePresetChange={onDatePresetChange}
-          onClearGenre={onClearGenre}
-          onClearDatePreset={onClearDatePreset}
-        />
-        <section className="pb-10 md:pb-16">
-          <div className="container">
-            {filteredPerformances.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-black">
-                {filteredPerformances.map(performance => (
-                  <PerformanceCard
-                    key={performance.ticketUrl ?? performance.title}
-                    performance={performance}
-                  />
-                ))}
-              </div>
-            ) : (
-              <div className="text-center py-12">
-                <p className="text-lg text-gray-600">
-                  No performances found for the selected filters.
-                </p>
-              </div>
-            )}
+    <EditorialPageLayout title="WHAT IS ON" navigation={navigation}>
+      <p role="status" className="mb-6 text-center text-sm text-muted">
+        {selectedGenres.length || selectedDatePreset
+          ? 'Filtered Performances'
+          : 'All Performances'}{' '}
+        ({filteredPerformances.length})
+      </p>
+      <FilterBar
+        selectedGenres={selectedGenres}
+        selectedDatePreset={selectedDatePreset}
+        onGenresChange={onGenresChange}
+        onDatePresetChange={onDatePresetChange}
+        onClearGenre={onClearGenre}
+        onClearDatePreset={onClearDatePreset}
+      />
+      <section className="mx-auto mt-10 w-full pb-10 md:mt-16 md:pb-16 lg:max-w-[52rem]">
+        {filteredPerformances.length > 0 ? (
+          <div className="grid grid-cols-1 gap-y-8 sm:grid-cols-2 sm:gap-x-4 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-10">
+            {filteredPerformances.map(performance => (
+              <PerformanceCard
+                key={performance.ticketUrl ?? performance.title}
+                performance={performance}
+              />
+            ))}
           </div>
-        </section>
-        <Footer />
-      </main>
-    </div>
+        ) : (
+          <div className="text-center py-12">
+            <p className="text-lg text-gray-600">
+              No performances found for the selected filters.
+            </p>
+          </div>
+        )}
+      </section>
+      <Footer />
+    </EditorialPageLayout>
   );
 }

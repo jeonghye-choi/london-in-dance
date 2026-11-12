@@ -1,5 +1,6 @@
 import type { CSSProperties, ReactNode } from 'react';
 import { Link } from 'wouter';
+import EditorialPageLayout from '@/components/EditorialPageLayout';
 
 const galleryCards = [
   {
@@ -130,16 +131,7 @@ type StoriesPageProps = {
 
 export default function StoriesPage({ navigation }: StoriesPageProps) {
   return (
-    <main className="mx-auto w-full max-w-[90rem] px-5 pb-16 pt-6 md:px-[clamp(1.25rem,5.56vw,5rem)] md:pt-[clamp(1.5rem,9vw,8rem)]">
-      <header className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-4">
-        <h1 className="flex flex-wrap gap-x-3 text-xl font-semibold leading-none tracking-[0.08em] sm:gap-x-5 sm:text-2xl lg:gap-x-16 lg:text-[2rem]">
-          <span>STORIES</span>
-          <span>IN</span>
-          <span>ART</span>
-        </h1>
-        {navigation}
-      </header>
-
+    <EditorialPageLayout title="STORIES IN ART" navigation={navigation}>
       {monthlyGalleries.map(
         (
           {
@@ -173,7 +165,7 @@ export default function StoriesPage({ navigation }: StoriesPageProps) {
             <section
               key={month}
               aria-labelledby={`stories-${month}`}
-              className={monthIndex === 0 ? 'mt-16 lg:mt-32' : 'mt-12 lg:mt-24'}
+              className="not-first:mt-12 lg:not-first:mt-24"
             >
               <h2
                 id={`stories-${month}`}
@@ -234,6 +226,6 @@ export default function StoriesPage({ navigation }: StoriesPageProps) {
           );
         }
       )}
-    </main>
+    </EditorialPageLayout>
   );
 }
