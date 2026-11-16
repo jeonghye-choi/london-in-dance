@@ -2,8 +2,16 @@ import { DEFAULT_IMAGE } from '@/constants';
 import { formatStartDate } from '@/utils/formatDate';
 import { Performance } from '@/types/performance';
 
+const openingDate = new Intl.DateTimeFormat('en-GB', {
+  month: 'short',
+  day: 'numeric',
+  timeZone: 'UTC',
+});
+
 interface PerformanceCardProps {
   performance: Performance;
+  isUpcoming: boolean;
+  daysUntilEnd: number;
 }
 
 function getCardImageUrl(imageUrl: string | undefined) {
@@ -29,12 +37,24 @@ function getCardImageUrl(imageUrl: string | undefined) {
   return imageUrl;
 }
 
-export default function PerformanceCard({ performance }: PerformanceCardProps) {
+export default function PerformanceCard({
+  performance,
+  isUpcoming,
+  daysUntilEnd,
+}: PerformanceCardProps) {
+  let timingLabel = `${daysUntilEnd} ${daysUntilEnd === 1 ? 'day' : 'days'} left`;
+
+  if (isUpcoming) {
+    timingLabel = `Opens ${openingDate.format(new Date(performance.startDate))}`;
+  } else if (daysUntilEnd === 0) {
+    timingLabel = 'Last day';
+  }
+
   const content = (
     <>
       {/* Image */}
       <div className="mb-3">
-        <div className="aspect-[2/3] bg-gray-100 overflow-hidden">
+        <div className="relative aspect-[4/5] bg-gray-100 overflow-hidden">
           <img
             src={getCardImageUrl(performance.imageUrl)}
             alt=""
@@ -46,6 +66,15 @@ export default function PerformanceCard({ performance }: PerformanceCardProps) {
               }
             }}
           />
+          <span
+            className={`absolute top-2 left-2 px-2.5 py-1 text-xs font-medium leading-4 ${
+              isUpcoming
+                ? 'bg-paper/90 text-ink'
+                : 'bg-[#f0d6c8] text-[#623524]'
+            }`}
+          >
+            {timingLabel}
+          </span>
         </div>
       </div>
 
@@ -65,7 +94,9 @@ export default function PerformanceCard({ performance }: PerformanceCardProps) {
 
       <p className="pt-3 text-xs text-muted">
         {formatStartDate(performance.startDate)}
-        {performance.endDate && ` - ${formatStartDate(performance.endDate)}`}
+        {performance.endDate &&
+          performance.endDate !== performance.startDate &&
+          ` – ${formatStartDate(performance.endDate)}`}
       </p>
     </>
   );

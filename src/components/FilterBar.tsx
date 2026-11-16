@@ -1,24 +1,24 @@
-import { DatePreset, DATE_PRESETS, Genre, GENRES } from '@/types/performance';
+import { WhenFilter, WHEN_FILTERS, Genre, GENRES } from '@/types/performance';
 
 interface FilterBarProps {
   selectedGenres: Genre[];
-  selectedDatePreset: DatePreset | null;
+  selectedWhenFilter: WhenFilter | null;
   onGenresChange: (genre: Genre) => void;
-  onDatePresetChange: (preset: DatePreset) => void;
+  onWhenFilterChange: (preset: WhenFilter) => void;
   onClearGenre: () => void;
-  onClearDatePreset: () => void;
+  onClearWhenFilter: () => void;
 }
 
 export default function FilterBar({
   selectedGenres,
-  selectedDatePreset,
+  selectedWhenFilter,
   onGenresChange,
-  onDatePresetChange,
+  onWhenFilterChange,
   onClearGenre,
-  onClearDatePreset,
+  onClearWhenFilter,
 }: FilterBarProps) {
   const isAllGenresSelected = selectedGenres.length === 0;
-  const isAllDatePresetSelected = selectedDatePreset === null;
+  const isAllWhenFilterSelected = selectedWhenFilter === null;
   return (
     <div className="mx-auto grid w-fit max-w-full gap-2.5">
       <div className="grid grid-cols-[3rem_minmax(0,1fr)] items-start gap-3">
@@ -56,28 +56,28 @@ export default function FilterBar({
       </div>
 
       <div className="grid grid-cols-[3rem_minmax(0,1fr)] items-start gap-3">
-        <p className="pt-1.5 text-[11px] leading-4 uppercase text-ink">Date</p>
+        <p className="pt-1.5 text-[11px] leading-4 uppercase text-ink">When</p>
         <div className="flex flex-wrap gap-x-1.5 gap-y-2 sm:gap-x-2">
           <button
             type="button"
-            aria-pressed={isAllDatePresetSelected}
-            onClick={onClearDatePreset}
+            aria-pressed={isAllWhenFilterSelected}
+            onClick={onClearWhenFilter}
             className={`min-h-7 whitespace-nowrap rounded-none border px-2.5 text-[11px] leading-4 uppercase transition-colors sm:px-3.5 ${
-              isAllDatePresetSelected
+              isAllWhenFilterSelected
                 ? 'border-ink bg-ink text-paper'
                 : 'border-line text-ink hover:border-ink'
             }`}
           >
             All
           </button>
-          {DATE_PRESETS.map(preset => (
+          {WHEN_FILTERS.map(preset => (
             <button
               key={preset}
               type="button"
-              aria-pressed={selectedDatePreset === preset}
-              onClick={() => onDatePresetChange(preset)}
+              aria-pressed={selectedWhenFilter === preset}
+              onClick={() => onWhenFilterChange(preset)}
               className={`min-h-7 whitespace-nowrap rounded-none border px-2.5 text-[11px] leading-4 uppercase transition-colors sm:px-3.5 ${
-                selectedDatePreset === preset
+                selectedWhenFilter === preset
                   ? 'border-ink bg-ink text-paper'
                   : 'border-line text-ink hover:border-ink'
               }`}

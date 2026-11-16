@@ -2,61 +2,6 @@ import { Performance } from '@/types/performance';
 
 export const sadlersWellsPerformances: Performance[] = [
   {
-    title: 'MargaM VR – Divya Kasturi',
-    venue: "Sadler's Wells East",
-    genre: 'National Dance',
-    startDate: '2026-11-05',
-    endDate: '2026-11-07',
-    imageUrl:
-      'https://images.sadlerswells.com/uploads/2026/10/SW-Masthead-2-scaled.jpg',
-    ticketUrl:
-      'https://www.sadlerswells.com/take-part/the-dance-floor-at-sadlers-wells-east/margam-vr-divya-kasturi/',
-    isFree: true,
-  },
-  {
-    title: 'Lost Dog – The Last Hamlet',
-    venue: "Sadler's Wells East",
-    genre: 'Contemporary',
-    startDate: '2026-11-05',
-    endDate: '2026-11-07',
-    imageUrl:
-      'https://images.sadlerswells.com/uploads/2026/04/Lost-Dog_The-Last-Hamlet_Landscape_2700x1080_photo-credit_Camilla-Greenwell-1-scaled.jpg',
-    ticketUrl:
-      'https://www.sadlerswells.com/whats-on/lost-dog-the-last-hamlet/#book',
-  },
-  {
-    title: "Germán Cornejo's Tango After Dark",
-    venue: "Sadler's Wells Theatre",
-    genre: 'National Dance',
-    startDate: '2026-11-05',
-    endDate: '2026-11-09',
-    imageUrl:
-      'https://images.sadlerswells.com/uploads/2025/11/tango_after_dark-scaled.jpg',
-    ticketUrl:
-      'https://www.sadlerswells.com/whats-on/g-cornejo-tango-after-dark/#book',
-  },
-  {
-    title: 'HUMANHOOD – Vortex',
-    venue: "Sadler's Wells East",
-    genre: 'Contemporary',
-    startDate: '2026-11-10',
-    endDate: '2026-11-14',
-    imageUrl:
-      'https://images.sadlerswells.com/uploads/2026/04/LEAD-IMAGE_Humanhood-Vortex_Thomas-Vilhelm_2700x1080-scaled.jpg',
-    ticketUrl: 'https://www.sadlerswells.com/whats-on/humanhood-vortex/#book',
-  },
-  {
-    title: 'My Fierce Ignorant Step – Christos Papadopoulos',
-    venue: "Sadler's Wells Theatre",
-    genre: 'Contemporary',
-    startDate: '2026-11-13',
-    endDate: '2026-11-14',
-    imageUrl:
-      'https://images.sadlerswells.com/uploads/2026/04/LEAD-IMAGE_My-Fierce-Ignorant-Step-Christos-Papadopoulos_Pinelopi_Gerasimou_2700x1080-scaled.jpg',
-    ticketUrl:
-      'https://www.sadlerswells.com/whats-on/my-fierce-ignorant-step-christos-papadopoulos/#book',
-  },
-  {
     title: 'BalletBoyz – Six Lethargies',
     venue: "Sadler's Wells Theatre",
     genre: 'Contemporary',
@@ -517,6 +462,17 @@ export const sadlersWellsPerformances: Performance[] = [
       'https://www.sadlerswells.com/whats-on/goteborgsoperans-hammer/#book',
   },
   {
+    title: "Alesandra Seutin / KVS – Ceci n'est pas Noire: Act II",
+    venue: 'Lilian Baylis Studio',
+    genre: 'Contemporary',
+    startDate: '2027-05-13',
+    endDate: '2027-05-15',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/10/LEAD-IMAGE-Ceci-nest-pas-Noire-act-ii--Malkia-Mutiri-2700-x-1080px-scaled.png',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/alesandra-seutin-kvs-ceci-nest-pas-noire-act-two/',
+  },
+  {
     title: 'Ichi Ni San – Club Ninja',
     venue: 'Lilian Baylis Studio',
     genre: 'Contemporary',
@@ -539,6 +495,37 @@ export const sadlersWellsPerformances: Performance[] = [
       'https://www.sadlerswells.com/whats-on/northern-ballet-robin-hood/#book',
   },
   {
+    title: "Sadler's Wells Presents – Five Dances",
+    venue: "Sadler's Wells East",
+    genre: 'Contemporary',
+    startDate: '2027-06-18',
+    endDate: '2027-06-19',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/10/LEAD-IMAGE-Five-Dances--Oliver-Rosser_2700x1080-master-OR-scaled.jpg',
+    ticketUrl: 'https://www.sadlerswells.com/whats-on/five-dances/',
+  },
+  {
+    title: 'Ewa Dziarnowska – This resting, patience',
+    venue: "Sadler's Wells East",
+    genre: 'Contemporary',
+    startDate: '2027-06-24',
+    endDate: '2027-06-26',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/10/LEAD-IMAGE-This-resting-patience-Ewa-Dwinowska--Spyros-Rennt-2700x1080-1-scaled.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/ewa-dziarnowska-this-resting-patience/',
+  },
+  {
+    title: "London Children's Ballet – Snow White",
+    venue: 'Peacock Theatre',
+    genre: 'Ballet',
+    startDate: '2027-07-02',
+    endDate: '2027-07-04',
+    imageUrl: 'https://images.sadlerswells.com/uploads/2022/09/Lead-Image.png',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/london-childrens-ballet-snow-white-2027/',
+  },
+  {
     title:
       'National Youth Dance Company × Hofesh Shechter Company – From England with Love',
     venue: "Sadler's Wells Theatre",
@@ -548,6 +535,17 @@ export const sadlersWellsPerformances: Performance[] = [
       'https://images.sadlerswells.com/uploads/2026/09/SW-Masthead-6-scaled.jpg',
     ticketUrl:
       'https://www.sadlerswells.com/whats-on/nydc-hofesh-shechter-from-england-with-love/#book',
+  },
+  {
+    title:
+      'National Youth Dance Company x Hofesh Shechter Company – From England with Love',
+    venue: "Sadler's Wells Theatre",
+    genre: 'Contemporary',
+    startDate: '2027-07-10',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/09/SW-Masthead-6-scaled.jpg',
+    ticketUrl:
+      'https://www.sadlerswells.com/whats-on/nydc-hofesh-shechter-from-england-with-love/',
   },
   {
     title: 'Pagrav Dance Company presents Khoj',
@@ -570,6 +568,16 @@ export const sadlersWellsPerformances: Performance[] = [
       'https://images.sadlerswells.com/uploads/2026/10/LEAD-IMAGE-Matthew-Bournes-Play-Without-Words-8708_03_PWW_SW_Website_2700x1080-scaled.jpg',
     ticketUrl:
       'https://www.sadlerswells.com/whats-on/new-adventures-play-without/#book',
+  },
+  {
+    title: 'Ballet Shoes',
+    venue: "Sadler's Wells Theatre",
+    genre: 'Ballet',
+    startDate: '2027-08-25',
+    endDate: '2027-09-11',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/05/BalletShoes_Sadlers_ProductionShots_2700x1080_1-scaled.jpg',
+    ticketUrl: 'https://www.sadlerswells.com/whats-on/ballet-shoes/',
   },
   {
     title: "Rambert – It's a Sin",

@@ -13,38 +13,42 @@ export default function WhatsOnPage({ navigation }: WhatsOnPageProps) {
   const {
     filteredPerformances,
     selectedGenres,
-    selectedDatePreset,
+    selectedWhenFilter,
     onGenresChange,
-    onDatePresetChange,
+    onWhenFilterChange,
     onClearGenre,
-    onClearDatePreset,
+    onClearWhenFilter,
   } = useFilteredPerformances();
 
   return (
     <EditorialPageLayout title="WHAT IS ON" navigation={navigation}>
       <p role="status" className="mb-6 text-center text-sm text-muted">
-        {selectedGenres.length || selectedDatePreset
+        {selectedGenres.length || selectedWhenFilter
           ? 'Filtered Performances'
           : 'All Performances'}{' '}
         ({filteredPerformances.length})
       </p>
       <FilterBar
         selectedGenres={selectedGenres}
-        selectedDatePreset={selectedDatePreset}
+        selectedWhenFilter={selectedWhenFilter}
         onGenresChange={onGenresChange}
-        onDatePresetChange={onDatePresetChange}
+        onWhenFilterChange={onWhenFilterChange}
         onClearGenre={onClearGenre}
-        onClearDatePreset={onClearDatePreset}
+        onClearWhenFilter={onClearWhenFilter}
       />
       <section className="mx-auto mt-10 w-full pb-10 md:mt-16 md:pb-16 lg:max-w-[52rem]">
         {filteredPerformances.length > 0 ? (
           <div className="grid grid-cols-1 gap-y-8 sm:grid-cols-2 sm:gap-x-4 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-10">
-            {filteredPerformances.map(performance => (
-              <PerformanceCard
-                key={performance.ticketUrl ?? performance.title}
-                performance={performance}
-              />
-            ))}
+            {filteredPerformances.map(
+              ({ performance, isUpcoming, daysUntilEnd }) => (
+                <PerformanceCard
+                  key={performance.ticketUrl ?? performance.title}
+                  performance={performance}
+                  isUpcoming={isUpcoming}
+                  daysUntilEnd={daysUntilEnd}
+                />
+              )
+            )}
           </div>
         ) : (
           <div className="text-center py-12">

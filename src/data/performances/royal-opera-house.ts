@@ -5,7 +5,7 @@ export const royalOperaHousePerformances: Performance[] = [
     title: 'Manon',
     venue: 'Royal Opera House',
     genre: 'Ballet',
-    startDate: '2026-10-13',
+    startDate: '2026-11-19',
     endDate: '2026-11-25',
     imageUrl:
       'https://images.prismic.io/royal-opera-house/acv_oZGXnQHGZJC4_HERO_2627_MANON_20240115_TheRoyalBallet_Manon_Hayward_Sambe_ROH_%C2%A9FoteiniChristofilopoulou-123.jpg',
@@ -15,7 +15,7 @@ export const royalOperaHousePerformances: Performance[] = [
     title: 'Visionaries: Robbins and MacMillan',
     venue: 'Royal Opera House',
     genre: 'Ballet',
-    startDate: '2026-11-09',
+    startDate: '2026-11-17',
     endDate: '2026-11-28',
     imageUrl:
       'https://images.prismic.io/royal-opera-house/aal7m1xvIZEnjW5W_HERO_VISIONARY_HM2021-Dancers-at-a-Gathering-03.jpg',
@@ -138,7 +138,7 @@ export const royalOperaHousePerformances: Performance[] = [
     imageUrl:
       'https://images.prismic.io/royal-opera-house/acv_oZGXnQHGZJC4_HERO_2627_MANON_20240115_TheRoyalBallet_Manon_Hayward_Sambe_ROH_%C2%A9FoteiniChristofilopoulou-123.jpg',
     ticketUrl:
-      'https://www.rbo.org.uk/latest-news/the-royal-ballet-additions-to-2026-27-season',
+      'https://www.rbo.org.uk/production/manon-kenneth-macmillan?start-date=08-06-27&end-date=02-07-27',
   },
   {
     title: 'Next Generation Festival 2027',
