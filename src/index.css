@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 
 @theme {
+  --color-forest: #2f5143;
   --color-paper: #ece9e6;
   --color-ink: #2c2825;
   --color-muted: #5f5955;
