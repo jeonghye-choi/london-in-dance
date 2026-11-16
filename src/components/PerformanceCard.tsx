@@ -2,8 +2,16 @@ import { DEFAULT_IMAGE } from '@/constants';
 import { formatStartDate } from '@/utils/formatDate';
 import { Performance } from '@/types/performance';
 
+const openingDate = new Intl.DateTimeFormat('en-GB', {
+  month: 'short',
+  day: 'numeric',
+  timeZone: 'UTC',
+});
+
 interface PerformanceCardProps {
   performance: Performance;
+  isUpcoming: boolean;
+  daysUntilEnd: number;
 }
 
 function getCardImageUrl(imageUrl: string | undefined) {
@@ -29,15 +37,27 @@ function getCardImageUrl(imageUrl: string | undefined) {
   return imageUrl;
 }
 
-export default function PerformanceCard({ performance }: PerformanceCardProps) {
-  return (
-    <div className="text-left card-border flex flex-col">
+export default function PerformanceCard({
+  performance,
+  isUpcoming,
+  daysUntilEnd,
+}: PerformanceCardProps) {
+  let timingLabel = `${daysUntilEnd} ${daysUntilEnd === 1 ? 'day' : 'days'} left`;
+
+  if (isUpcoming) {
+    timingLabel = `Opens ${openingDate.format(new Date(performance.startDate))}`;
+  } else if (daysUntilEnd === 0) {
+    timingLabel = 'Last day';
+  }
+
+  const content = (
+    <>
       {/* Image */}
-      <div className="p-5 lg:p-7">
-        <div className="aspect-[4/3] md:aspect-[3/4] bg-gray-100 overflow-hidden">
+      <div className="mb-3">
+        <div className="relative aspect-[4/5] bg-gray-100 overflow-hidden">
           <img
             src={getCardImageUrl(performance.imageUrl)}
-            alt={performance.title}
+            alt=""
             loading="lazy"
             className="w-full h-full object-cover"
             onError={e => {
@@ -46,13 +66,22 @@ export default function PerformanceCard({ performance }: PerformanceCardProps) {
               }
             }}
           />
+          <span
+            className={`absolute top-2 left-2 px-2.5 py-1 text-xs font-medium leading-4 ${
+              isUpcoming
+                ? 'bg-paper/90 text-ink'
+                : 'bg-[#f0d6c8] text-[#623524]'
+            }`}
+          >
+            {timingLabel}
+          </span>
         </div>
       </div>
 
       {/* Content */}
-      <div className="px-5 lg:px-7 pb-1 space-y-1 flex-1 flex flex-col">
+      <div className="pb-1 space-y-1 flex-1 flex flex-col">
         <h3
-          className="text-sm md:text-base lg:text-lg font-semibold leading-snug"
+          className="text-sm md:text-base lg:text-lg font-semibold leading-snug group-hover:underline group-focus-visible:underline"
           style={{ fontFamily: 'var(--font-family-display)' }}
         >
           {performance.title}
@@ -63,22 +92,27 @@ export default function PerformanceCard({ performance }: PerformanceCardProps) {
         </p>
       </div>
 
-      {/* Bottom */}
-      <div className="flex items-center justify-between px-5 lg:px-7 pb-3 lg:pb-5 pt-2">
-        <p className="text-[10px] lg:text-xs text-gray-500 whitespace-nowrap">
-          {formatStartDate(performance.startDate)}
-          {performance.endDate && ` - ${formatStartDate(performance.endDate)}`}
-        </p>
+      <p className="pt-3 text-xs text-muted">
+        {formatStartDate(performance.startDate)}
+        {performance.endDate &&
+          performance.endDate !== performance.startDate &&
+          ` – ${formatStartDate(performance.endDate)}`}
+      </p>
+    </>
+  );
 
-        <a
-          href={performance.ticketUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[10px] lg:text-xs underline text-gray-700 hover:text-black transition-colors duration-150"
-        >
-          View Details →
-        </a>
-      </div>
-    </div>
+  if (!performance.ticketUrl) {
+    return <article className="flex flex-col text-left">{content}</article>;
+  }
+
+  return (
+    <a
+      href={performance.ticketUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex flex-col text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
+    >
+      {content}
+    </a>
   );
 }

@@ -1,24 +1,21 @@
-import { Route, Switch } from 'wouter';
 import { Analytics } from '@vercel/analytics/react';
 import { useEffect, useState } from 'react';
-import Home from './pages/Home';
-import NotFound from './pages/NotFound';
-import ErrorBoundary from './components/ErrorBoundary';
-
-function Router() {
-  return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route component={NotFound} />
-    </Switch>
-  );
-}
+import { useRoute } from 'wouter';
+import ErrorBoundary from '@/components/ErrorBoundary';
+import Router from './router';
+import SiteNav from './SiteNav';
 
 export default function App() {
+  const [isHome] = useRoute('/');
+  const [isStories] = useRoute('/stories');
+  const [isStoryDetail] = useRoute('/stories/:slug');
+  const [isAbout] = useRoute('/about');
+  const [isWhatsOn] = useRoute('/whats-on');
   const [pageLoaded, setPageLoaded] = useState(false);
 
   useEffect(() => {
     const onLoad = () => setPageLoaded(true);
+
     if (document.readyState === 'complete') {
       onLoad();
       return;
@@ -30,6 +27,11 @@ export default function App() {
 
   return (
     <ErrorBoundary>
+      {!isHome && !isStories && !isStoryDetail && !isWhatsOn && !isAbout && (
+        <header className="page-inset flex justify-end">
+          <SiteNav />
+        </header>
+      )}
       <Router />
       {pageLoaded && <Analytics />}
     </ErrorBoundary>

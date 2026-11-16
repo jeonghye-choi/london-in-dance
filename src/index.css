@@ -1,17 +1,30 @@
 @import 'tailwindcss';
 
+@theme {
+  --color-forest: #2f5143;
+  --color-paper: #ece9e6;
+  --color-ink: #2c2825;
+  --color-muted: #5f5955;
+  --color-line: #928b86;
+}
+
 :root {
-  --font-family-display: 'Geist', sans-serif;
-  --font-family-body: 'Outfit', sans-serif;
+  --font-family-display: 'Pretendard', sans-serif;
+  --font-family-body: 'Roboto', sans-serif;
+}
+
+@utility page-inset {
+  @apply mx-auto w-full max-w-[90rem] px-5 pt-5 md:px-[clamp(1.25rem,5.56vw,5rem)] md:pt-[clamp(1.5rem,9svh,8rem)] max-lg:[@media(max-height:42.5rem)]:pt-3;
 }
 
 @layer base {
   html {
     font-family: var(--font-family-body);
+    scrollbar-gutter: stable;
   }
 
   body {
-    @apply bg-white text-black;
+    @apply bg-paper text-ink;
   }
 
   h1,
@@ -76,11 +89,5 @@
   a,
   [role='button'] {
     transition: all 0.15s ease-out;
-  }
-}
-
-@layer components {
-  .card-border {
-    box-shadow: inset -1px -1px 0 #000;
   }
 }

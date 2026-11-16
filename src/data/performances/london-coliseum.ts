@@ -2,17 +2,6 @@ import { Performance } from '@/types/performance';
 
 export const londonColiseumPerformances: Performance[] = [
   {
-    title: 'The Margot Fonteyn International Ballet Competition – Final',
-    venue: 'London Coliseum',
-    genre: 'Ballet',
-    startDate: '2026-11-08',
-    endDate: '2026-11-08',
-    imageUrl:
-      'https://londoncoliseum.org/wp-content/uploads/2026/05/Website_Fonteyn-finalists-banner-2000x1000-1-850x478.jpg',
-    ticketUrl:
-      'https://londoncoliseum.org/events/the-margot-fonteyn-international-ballet-competition-final/#calendar',
-  },
-  {
     title: 'Nutcracker – English National Ballet',
     venue: 'London Coliseum',
     genre: 'Ballet',

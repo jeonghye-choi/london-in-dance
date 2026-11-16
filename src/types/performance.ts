@@ -6,8 +6,8 @@ export const GENRES = [
 ] as const;
 export type Genre = (typeof GENRES)[number];
 
-export const DATE_PRESETS = ['Now On', 'This Week', 'This Month'] as const;
-export type DatePreset = (typeof DATE_PRESETS)[number];
+export const WHEN_FILTERS = ['Now on', 'Ending soon', 'Coming up'] as const;
+export type WhenFilter = (typeof WHEN_FILTERS)[number];
 
 export interface Performance {
   title: string;
