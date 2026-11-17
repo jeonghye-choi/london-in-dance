@@ -299,6 +299,16 @@ export const sadlersWellsPerformances: Performance[] = [
       'https://www.sadlerswells.com/whats-on/company-wayne-mcgregor-deepstaria-2027/#book',
   },
   {
+    title: 'THISISPOPBABY – WAKE',
+    venue: 'Peacock Theatre',
+    genre: 'Contemporary',
+    startDate: '2027-03-04',
+    endDate: '2027-03-07',
+    imageUrl:
+      'https://images.sadlerswells.com/uploads/2026/10/LEAD-IMAGE-WAKE_27_Uncropped_Hires_03_RuthMedjber-1-scaled.jpg',
+    ticketUrl: 'https://www.sadlerswells.com/whats-on/thisispopbaby-wake-2027/',
+  },
+  {
     title: 'Scottish Ballet – Coppélia',
     venue: "Sadler's Wells Theatre",
     genre: 'Ballet',
